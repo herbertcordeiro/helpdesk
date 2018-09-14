@@ -30,12 +30,28 @@
             <div class="justify-center">
                 <div class="newticket">
                     <h2> Novo ticket</h2>
+                    <form action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="part-atribute">
+                            <p>Nome e Sobrenome: *</p>
+                            <p>Email: *</p>
+                            <p>Telefone: </p>
+                            <p>Categoria: *</p>
+                            <p>Anexos: </p>
+                            <p>Descrição: *</p>
+                        </div>
+                        <div class="part-input">
+                            <div class="input">{{ form.nome_completo }}</div>
+                            <div class="input">{{ form.email }}</div>
+                            <div class="input">{{ form.telefone }}</div>
+                            <div class="input">{{ form.categoria }}</div>
+                            <div class="input">{{ form.anexo }}</div>
+                            <div class="input">{{ form.descricao }}</div>
+                        </div>
+                        <input class="btn-newticket" type="submit" value="enviar ticket">
+                    </form>
                 </div>
-                <form action="" method="post" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {{ form }}
-                    <input type="submit" value="Submit">
-                </form>
+
             </div>
         </div>
         <footer>
