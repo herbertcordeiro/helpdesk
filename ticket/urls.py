@@ -1,8 +1,8 @@
 from django.urls import path
-from .views import newticket 
-from .views import optionticket
+from .views import optionticket, searchticket, newticket 
 
 urlpatterns = [
-    path('newticket/', newticket),
-    path('optionticket/', optionticket, name='oxi'),
+    path('newticket/', newticket, name='newticket'),
+    path('optionticket/', optionticket, name='optionticket'),
+    path('searchticket/', searchticket, name='searchticket'),
 ]

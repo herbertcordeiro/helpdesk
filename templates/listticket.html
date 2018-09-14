@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html lang="en">
 
 <head>
@@ -6,16 +7,16 @@
     <title> Helpdesk </title>
     <meta name="viewport" content="width=device-width, inital-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="../static/css/reset.css">
-    <link rel="stylesheet" href="../static/css/colors.css">
-    <link rel="stylesheet" href="../static/css/navticket.css">
-    <link rel="stylesheet" href="../static/css/listticket.css">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/colors.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navticket.css' %}">
+    <link rel="stylesheet" href="{% static 'css/listticket.css' %}">
 </head>
 
 <header class="header">
     <div class="content-header">
         <a href="./index.html">
-            <img class="logo" src="../static/images/logo.png">
+            <img class="logo" src="{% static 'images/logo.png' %}">
         </a>
         <a href="#">
             <div class="btn-login">entrar</div>

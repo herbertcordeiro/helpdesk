@@ -8,4 +8,7 @@ def newticket(request):
     return render(request, 'newticket.html', {'form': form})
 
 def optionticket(request):
-    return render(request, 'optionticket.html', {})
+    return render(request, 'optionticket.html')
+
+def searchticket(request):
+    return render(request, 'searchticket.html')
