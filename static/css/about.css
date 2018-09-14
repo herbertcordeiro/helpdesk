@@ -1,0 +1,18 @@
+.container-about {
+    display: grid;
+    width: 100%;
+    background-color: var(--light-gray)
+}
+
+.content-about {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 65%;
+    margin: 0 auto;
+    color: var(--dark-gray);
+}
+
+.content-about h1 {
+    text-align: center;
+    padding: 40px;
+}

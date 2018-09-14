@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../static/css/reset.css">
     <link rel="stylesheet" href="../static/css/colors.css">
     <link rel="stylesheet" href="../static/css/navticket.css">
-    <link rel="stylesheet" href="../static/css/newticket.css">
+    <link rel="stylesheet" href="../static/css/listticket.css">
 </head>
 
 <header class="header">
@@ -24,17 +24,12 @@
 </header>
 
 <body>
-    <div class="container-newticket">
-        <div class="content-newticket">
+    <div class="container-listticket">
+        <div class="content-listticket">
             <div class="justify-center">
-                <div class="newticket">
-                    <h2> Novo ticket</h2>
+                <div class="listticket">
+                    <h2> Ticket de #user</h2>
                 </div>
-                <form action="" method="post" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {{ form }}
-                    <input type="submit" value="Submit">
-                </form>
             </div>
         </div>
         <footer>
@@ -42,3 +37,5 @@
         </footer>
     </div>
 </body>
+
+</html>
