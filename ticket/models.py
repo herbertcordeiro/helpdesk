@@ -10,7 +10,6 @@ class Ticket(models.Model):
         (sala, 'SALA'),
         (labs, 'LABS'),
     )
-    
     nome_completo = models.CharField(max_length=50)
     email = models.EmailField()
     telefone = models.CharField(max_length=14)
