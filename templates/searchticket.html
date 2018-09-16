@@ -15,7 +15,7 @@
 
 <header class="header">
     <div class="content-header">
-        <a href="./index.html">
+        <a href="{% url 'home' %}">
             <img class="logo" src="{% static 'images/logo.png' %}">
         </a>
         <a href="#">
@@ -34,10 +34,11 @@
                     </div>
                     <h2>Visualizar um ticket existente</h2>
                     <p>ID do ticket:</p>
-                    <input class="input" type="text">
-                    <a class="links" href="#">
-                        <div class="btn-searchticket">visualizar ticket</div>
-                    </a>
+
+                    <form action="{% url 'aff' %}" method="GET">
+                        <input id="your_name" type="number" name="aff" value="{{ id }}">
+                        <input type="submit" value="OK">
+                    </form>
                 </div>
             </div>
         </div>

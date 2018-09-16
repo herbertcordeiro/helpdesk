@@ -12,3 +12,6 @@ def optionticket(request):
 
 def searchticket(request):
     return render(request, 'searchticket.html')
+
+def oxi(request):
+    print(request.GET['aff'])
