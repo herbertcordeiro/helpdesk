@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .forms import TicketForm
+from .models import Ticket
 
 def newticket(request):
     form = TicketForm(request.POST, request.FILES, None)
@@ -14,4 +15,6 @@ def searchticket(request):
     return render(request, 'searchticket.html')
 
 def oxi(request):
-    print(request.GET['aff'])
+    ticket = Ticket.objects.get(id=request.GET['aff'])
+    context_dict = {'ticket': ticket}
+    return render(request, 'mostrarticket.html', context= context_dict)
