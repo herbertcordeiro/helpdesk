@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .forms import TicketForm
 from .models import Ticket
+from django.contrib.auth.decorators import login_required
 
 def newticket(request):
     form = TicketForm(request.POST, request.FILES, None)
