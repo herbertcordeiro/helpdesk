@@ -1,0 +1,42 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.content-left {
+    background-color: var(--dark-gray);
+    height: 100%;
+    width: 50%;
+    position: absolute;
+}
+
+.content-rigth {
+    background-color: var(--white);
+    height: 100%;
+    width: 50%;
+    position: relative;
+    float: right;
+}
+
+.content-login {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 65%;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    align-content: center;
+}
+
+.logo {
+    width: 220px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
