@@ -36,8 +36,8 @@
                     <p>ID do ticket:</p>
 
                     <form action="{% url 'aff' %}" method="GET">
-                        <input id="your_name" type="number" name="aff" value="{{ id }}">
-                        <input type="submit" value="OK">
+                        <input id="your_name" type="text" name="aff" value="{{ id }}">
+                        <input  class="btn-searchticket" type="submit" value="visualizar ticket">
                     </form>
                 </div>
             </div>
