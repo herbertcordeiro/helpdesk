@@ -3,12 +3,64 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<title> Helpdesk </title>
+		<meta name="viewport" content="width=device-width, inital-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="stylesheet" href="{% static 'css/reset.css' %}">
+		<link rel="stylesheet" href="{% static 'css/colors.css' %}">
+		<link rel="stylesheet" href="{% static 'css/navticket.css' %}">
+		<link rel="stylesheet" href="{% static 'css/listticket.css' %}">
 	</head>
 	<body>
-		<p>{{ticket.id}}</p>
-		<p>{{ticket.email}}</p>
-		<p>{{ticket.telefone}}</p>
-		<p>{{ticket.descricao}}</p>
-		<p>{{ticket.categoria.nome}}</p>
+		
 	</body>
+	<header class="header">
+    <div class="content-header">
+        <a href="{% url 'home' %}">
+            <img class="logo" src="{% static 'images/logo.png' %}">
+        </a>
+        <a href="#">
+            <div class="btn-login">entrar</div>
+        </a>
+    </div>
+</header>
+
+<body>
+    <div class="container-listticket">
+        <div class="content-listticket">
+            <div class="justify-center">
+                <div class="listticket">
+                    <h2> Ticket de {{ticket.nome_completo}}</h2>
+					<div class="part-list">
+						<p>ID: </p>
+						<p>Status do ticket: </p>
+						<p>Criado em: </p>
+						<p>Última atualização: </p>
+						<p>Último remetente: </p>
+						<p>Categoria: </p>
+						<p>Nome e Sobrenome: </p>
+						<p>Email: </p>
+						<p>Telefone: </p>
+						<p>Descrição: </p>
+					</div>
+					<div class="part-atribute">
+						<p>{{ticket.id}}</p>
+						<p>{{ticket.email}}</p>
+						<p>{{ticket.telefone}}</p>
+						<p>{{ticket.email}}</p>
+						<p>{{ticket.categoria.nome}}</p>
+						<p>{{ticket.email}}</p>
+						<p>{{ticket.email}}</p>
+						<p>{{ticket.email}}</p>
+						<p>{{ticket.email}}</p>
+						<p>{{ticket.email}}</p>
+					</div>
+				</div>
+            </div>
+        </div>
+        <footer>
+            <p>Copyright © 2018</p>
+        </footer>
+    </div>
+</body>
 </html>
