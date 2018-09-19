@@ -15,8 +15,8 @@
 }
 
 .newticket {
-    width: 660px;
-    height: 440px;
+    width: 680px;
+    height: 480px;
     border-radius: 30px 30px 0px 30px;
     padding: 24px;
     color: var(--red);
@@ -26,7 +26,7 @@
 
 .newticket p {
     font-size: 1em;
-    margin: 10px auto;
+    margin: 14px auto;
     color: var(--dark-gray);
 }
 
@@ -42,7 +42,7 @@
 }
 
 .part-input {
-    padding: 20px;
+    padding: 24px;
 }
 
 .input {
@@ -65,17 +65,14 @@
 
 }
 
-/* .input2{
+.input input {
     background-color: var(--light-gray);
-    width: 320px;
+    width: 360px;
     height: 25px;
     border-radius: 40px;
-    margin-left: 75px;
-    removendo border input
     border: 0 none;
     outline: 0;
-} 
-*/
+}
 
 footer {
     position: fixed;
