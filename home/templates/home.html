@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <title> Helpdesk </title>
+      <meta name="viewport" content="width=device-width, inital-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <link rel="stylesheet" href="../static/css/reset.css">
+      <link rel="stylesheet" href="../static/css/colors.css">
+      <link rel="stylesheet" href="../static/css/nav.css">
+      <link rel="stylesheet" href="../static/css/ticket.css">
+      <link rel="stylesheet" href="../static/css/featured.css">
+      <link rel="stylesheet" href="../static/css/about.css">
+      <link rel="stylesheet" href="../static/css/contact.css">
+      <link rel="stylesheet" href="../static/css/footer.css">
+      <link rel="stylesheet" href="../static/css/slider.css">
+</head>
+
+<header class="header">
+      <div class="content-header">
+            <a href="{% url 'home' %}">
+                  <img class="logo" src="../static/images/logo.png">
+            </a>
+            <a class="links" href="#contact"><h4>contato</h4></a>
+            <a class="links" href="#about" ><h4>sobre</h4></a>
+                {% if user.is_authenticated %}
+                    <a class="links" href="{% url 'logout' %}">
+                    <div class="btn-login"> Olá {{ user.username }}</div>
+                {% else %}
+                    <a class="links" href="{% url 'login' %}">
+                    <div class="btn-login">entrar</div>
+                {% endif %}
+
+            </a>
+      </div>
+</header>
+
+<body>
+      <div class="container">
+            <div class="content-body">
+                  <h1>Software Gratuito <br> para Atendimento <br> ao Cliente</h1>
+                  <a class="links" href="{% url 'optionticket' %}">
+                        <div class="btn-ticket">tickets</div>
+                  </a>
+                  <img class="icon" src="../static/images/icon.png">
+            </div>
+      </div>
+      <div class="about">
+            <h1>Organize sua equipe de atendimento ao cliente<br>
+                  gratuitamente com nosso software.</h1>
+      </div>
+      <div class="container-featured">
+            <div class="content-featured">
+                  <div class="primary-featured">
+                        <h3> Lorem ipsum </h3>
+                        <p> Lorem ipsum</p>
+                  </div>
+                  <div class="secondary-featured">
+                        <h3> Lorem ipsum </h3>
+                        <p> Lorem ipsum</p>
+                  </div>
+                  <div class="third-featured">
+                        <h3> Lorem ipsum </h3>
+                        <p> Lorem ipsum</p>
+                  </div>
+            </div>
+      </div>
+      <div id="about" class="container-about">
+            <div class="content-about">
+                  <h1> Sobre </h1>
+                  <h3> 
+                        O sistema é um helpdesk que inspirado no modelo de resolução de problemas do ITIL 
+                        Guide V3 trazendo algumas caracteristicas já
+                        utilizadas nesse tipo de sistema, porém com o diferencial das boas 
+                        praticas de atendimento fazendo com o que o processo
+                        de resolução se torne mais pratico e agil.
+                  </h3>
+            </div>
+      </div>
+
+      <div class="container-slider">
+            <h1> Sistema </h1>
+            <div class="content-slider">
+            </div>
+      </div>
+
+      <div id="contact" class="container-contact">
+            <h1 class="contact-title"> Contato </h1>
+            <div class="content-contact">
+                  <a href="https://www.linkedin.com/in/herbertcordeiro/" ><div class="photo" id="herbert"></div></a>
+                  <a href="https://www.linkedin.com/in/johnnyhonorato/"> <div class="photo" id="johnny"></div></a>
+                  <a href="https://www.linkedin.com/in/kalber-roberto-2998a516b/"><div class="photo" id="kalber"></div></a>
+                  <a href="https://www.linkedin.com/in/guthyelvis-santos-863a9716b/"> <div class="photo" id="gutho"></div></a>
+                  <a href="https://www.linkedin.com/in/gabriela-andrade-a0162a152/"> <div class="photo" id="gabi"></div></a>
+                  <p>Herbert Cordeiro<br>
+                        Desenvolvedor e UX Designer</p>
+                  <p>Johnny Menezes<br>
+                        Desenvolvedor</p>
+                  <p>Kalber Roberto<br>
+                        Desenvolvedor</p>
+                  <p>Guthyelvis Santos<br>
+                        Desenvolvedor</p>
+                  <p>Gabriela Andrade<br>
+                        Desenvolvedora</p>
+            </div>
+            <div class="face"></div>
+            <div class="git"></div>
+            <h2 class="email">contato@helpdesk.com</h2>
+      </div>
+      <script type="text/javascript" src="src/js/index.js"></script>
+</body>
+
+<footer>
+      <p>Copyright © 2018</p>
+</footer>
+
+</html>
