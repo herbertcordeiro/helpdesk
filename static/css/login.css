@@ -1,8 +1,3 @@
-.container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
 .content-left {
     background-color: var(--dark-gray);
     height: 100%;
@@ -20,11 +15,8 @@
 
 .content-login {
     display: grid;
-    grid-template-columns: 1fr;
-    width: 65%;
+    width: 100%;
     height: 100%;
-    margin: 0 auto;
-    overflow: hidden;
     align-content: center;
 }
 
@@ -40,3 +32,43 @@
     max-height: 100%;
 }
 
+.login {
+    margin: 0 120px;
+    font-size: 1em;
+}
+
+.login input {
+    margin-top: 20px;
+    text-transform: lowercase;
+    width: 100%;
+    height: 20px;
+    border-bottom: 1.1pt solid var(--dark-gray);
+}
+
+.login p {
+    margin-top: 20px;
+    color: var(--dark-gray);
+}
+
+.login label {
+    text-transform: uppercase;
+}
+
+button {
+    color: var(--white);
+    background-color: var(--dark-gray);
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1em;
+    text-transform: uppercase;
+    margin: 40px auto;
+}
+
+#recover-pass {
+    color: var(--dark-gray);
+    margin: 0 auto;
+    font-size: 0.75em;
+    text-decoration: none;
+}

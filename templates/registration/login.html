@@ -13,7 +13,6 @@
 </head>
 
 <body>
-  <div container>
     <div class="content-left">
         <img class="logo" src="../static/images/logo.png">
     </div>
@@ -22,12 +21,13 @@
             <div class="login">
               	<form method="post">
                 {% csrf_token %}
-                {{ form.as_p}}
-                <button class="btn-entrar" type="submit"> Login </button>
+                {{ form.as_p }} 
                 </form>
-              </div> 
-            </div>
-			</div>
+              </div>
+              <button type="submit"> Login </button>
+              <a href="#" id="recover-pass"><p >Esqueceu a senha?</p></a>
+          </div> 
+      </div>
 </body>
 
 </html>
