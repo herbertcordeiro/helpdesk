@@ -1,0 +1,56 @@
+.container {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 300px 100%;
+    grid-template-areas: "dash nav""dash title";
+}
+
+.content-dash {
+    grid-area: dash;
+    background-color: var(--dark-gray);
+}
+
+.profile-admin {
+    display: grid;
+    width: 100%;
+    height: 300px;
+    justify-content: center;
+    color: var(--white);
+    text-align: center;
+}
+
+.photo-admin {
+    border-radius: 100%;
+    width: 130px;
+    height: 130px;
+    background-color: var(--white);
+    margin-top: 70px;
+}
+
+.content-nav {
+    grid-area: nav;
+    background-color: var(--light-gray);
+    height: 100px;
+}
+
+.content-title {
+    grid-area: title;
+    background-color: var(--gray);
+}
+
+.tickets {
+    display: grid;
+    background-color: var(--gray);
+    height: 60px;
+    align-content: center;
+}
+
+.icon img {
+    width: 30px;
+    margin: 0 20px;
+}
+
+.menu h3 {
+    color: var(--white);
+}

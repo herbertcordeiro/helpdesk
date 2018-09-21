@@ -19,3 +19,6 @@ def oxi(request):
     ticket = Ticket.objects.get(id=request.GET['aff'])
     context_dict = {'ticket': ticket}
     return render(request, 'mostrarticket.html', context= context_dict)
+
+def dashboard(request):
+    return render(request, 'basedashboard.html')
