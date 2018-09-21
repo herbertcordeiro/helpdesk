@@ -39,18 +39,24 @@
     background-color: var(--gray);
 }
 
-.tickets {
+.option {
     display: grid;
-    background-color: var(--gray);
-    height: 60px;
+    grid-template-columns: 30% 70%;
+    height: 90px;
     align-content: center;
 }
 
-.icon img {
-    width: 30px;
-    margin: 0 20px;
+.option p {
+    color: var(--white);
+    font-size: 1em;
 }
 
-.menu h3 {
-    color: var(--white);
+.icon {
+    width: 25px;
+    margin-left: 40px;
+}
+
+.option:hover{
+    background-color: var(--gray);
+    border-left: 3pt solid var(--dark-red);
 }
