@@ -8,7 +8,6 @@ from home import urls as home_urls
 
 urlpatterns = [
     path('', include(home_urls)),
-    path('home', index, name='home'),
     path('tickets/', include('ticket.urls')),
     path('admin/', admin.site.urls),
     path('login/', auth_views.login, name='login'),

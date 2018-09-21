@@ -55,6 +55,8 @@
 }
 
 button {
+    display: grid;
+    align-content: center;
     color: var(--white);
     background-color: var(--dark-gray);
     width: 200px;
