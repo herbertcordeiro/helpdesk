@@ -6,7 +6,9 @@ from django.contrib.auth.decorators import login_required
 def newticket(request):
     form = TicketForm(request.POST, request.FILES, None)
     if form.is_valid():
-        form.save()
+        ticket = form.save()
+        context_dict = {'ticket': ticket}
+        return render(request, 'mostrarticket.html', context = context_dict)
     return render(request, 'newticket.html', {'form': form})
 
 def optionticket(request):
@@ -15,10 +17,14 @@ def optionticket(request):
 def searchticket(request):
     return render(request, 'searchticket.html')
 
+def pesquisa_ticket(id):
+    ticket = Ticket.objects.get(id=id)
+    return ticket
+
 def oxi(request):
-    ticket = Ticket.objects.get(id=request.GET['aff'])
+    ticket = pesquisa_ticket(request.GET['aff'])
     context_dict = {'ticket': ticket}
-    return render(request, 'mostrarticket.html', context= context_dict)
+    return render(request, 'mostrarticket.html', context = context_dict)
 
 def dashboard(request):
     return render(request, 'basedashboard.html')

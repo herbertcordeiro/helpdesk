@@ -49,10 +49,11 @@
                             <div class="input">{{ form.descricao }}</div>
                         </div>
                         <input class="btn-newticket" type="submit" value="enviar ticket">
+                        <a class="btn-cancel" href="{% url 'optionticket' %}" >
+                            cancelar
+                        </a>
                     </form>
-                    <a href="{% url 'optionticket' %}">
-                        <input class="btn-cancel" type="submit" value="cancelar">
-                    </a>
+
                 </div>
             </div>
         </div>
