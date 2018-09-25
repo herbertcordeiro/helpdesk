@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ticket',
     'home',
+    'adminstrador'
 ]
 
 MIDDLEWARE = [
@@ -126,4 +127,4 @@ STATIC_URL = '/static/'
 
 LOGIN_URL = '/login/'
 
-LOGIN_REDIRECT_URL = '/' #URL DE TELA DE ADM.
+LOGIN_REDIRECT_URL = '/adm/inicial/' #URL DE TELA DE ADM.
