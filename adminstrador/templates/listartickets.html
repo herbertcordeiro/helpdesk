@@ -1,5 +1,19 @@
-{% extends 'basedashboard.html' %}
-
-{% block main %}
-
-{% endblock %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+    <ul>
+        {% for ticket in tickets %}
+            <li> 
+             ID : {{ ticket.id }} <br>
+            NOME: {{ ticket.nome_completo }}<br>
+             Categoria: {{ ticket.categoria.nome }}<br>
+             STATUS: {{ ticket.get_status_display }}<br>
+            </li>
+             Atribuido: #
+        {% endfor %}
+    </ul>>
+</body>
+</html>

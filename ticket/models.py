@@ -7,6 +7,12 @@ class Categoria(models.Model):
         return self.nome
 
 class Ticket(models.Model):
+    STATUS = (
+        ('1', 'novo'),
+        ('2', 'resolvido'),
+        ('3', 'em progresso')
+    )
+    status = models.CharField(max_length=1, null=True, choices=STATUS, default='1')
     data_criacao=models.DateTimeField(auto_now_add=True)
     categoria = models.ForeignKey(Categoria, on_delete=models.SET_NULL, null=True)
     nome_completo = models.CharField(max_length=50)
