@@ -11,12 +11,6 @@
     background-color: var(--dark-gray);
 }
 
-.content-nav {
-    grid-area: nav;
-    background-color: var(--light-gray);
-    height: 80px;
-}
-
 .content-title {
     grid-area: title;
 }
@@ -60,3 +54,22 @@
     border-left: 2pt solid var(--dark-red);
 }
 
+.content-nav {
+    display: grid;
+    grid-area: nav;
+    grid-template-columns: 95% 5%;
+    background-color: var(--light-gray);
+    height: 70px;
+}
+
+.logout-part,
+.notification-part {
+    display: grid;
+    align-content: center;
+    justify-content: end;
+    padding: 20px;
+}
+
+.icon-nav {
+    width: 20px;
+}
