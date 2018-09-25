@@ -1,0 +1,18 @@
+.container-social {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    background-color: var(--red);
+}
+
+.content-social {
+    display: grid;
+    width: 65%;
+    margin: 0 auto;
+    align-content: center;
+    justify-content: center;
+}
+
+.icon-social {
+    width: 60px;
+}
