@@ -19,39 +19,59 @@
                     </div>
                     <h4>Administrador</h4>
                 </div>
-            <div class="menu">
-                <a href="#"><div class="option">
-                    <img class="icon" src="{% static 'images/icon01.png' %}"> 
-                    <p>TICKETS</p>
-                </div></a>
-                <a href="#"><div class="option">
-                    <img class="icon" src="{% static 'images/icon02.png' %}"> 
-                    <p>RELATÓRIOS</p>
-                </div></a>
-                <a href="#"><div class="option">
-                    <img class="icon" src="{% static 'images/icon03.png' %}"> 
-                    <p>USUÁRIOS</p>
-                </div></a>
-                <a href="#"><div class="option">
-                    <img class="icon" src="{% static 'images/icon04.png' %}"> 
-                    <p>PERFIL</p>
-                </div></a>
-                <a href="#"><div class="option">
-                    <img class="icon" src="{% static 'images/icon05.png' %}"> 
-                    <p>AJUSTES</p>
-                </div></a>
+                <div class="menu">
+                    <a href="#">
+                        <div class="option">
+                            <img class="icon" src="{% static 'images/icon01.png' %}"> 
+                            <p>TICKETS</p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="option">
+                            <img class="icon" src="{% static 'images/icon02.png' %}"> 
+                            <p>RELATÓRIOS</p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="option">
+                            <img class="icon" src="{% static 'images/icon03.png' %}"> 
+                            <p>USUÁRIOS</p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="option">
+                            <img class="icon" src="{% static 'images/icon04.png' %}"> 
+                            <p>PERFIL</p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="option">
+                            <img class="icon" src="{% static 'images/icon05.png' %}"> 
+                            <p>AJUSTES</p>
+                        </div>
+                    </a>
                 </div>
             </div>
-            <div class="content-nav">
-                <a href="#"><div class="notification-part">
-                    <img class="icon-nav" src="{% static 'images/icon-notification.png' %}">
-                </div></a>
-                <a href="{% url 'logout' %}"><div class="logout-part">
-                    <img class="icon-nav" src="{% static 'images/icon-logout.png' %}">
-                </div></a>
-            </div>
-            <div class="content-title">
-            
+            <div class="container-body">
+                <div class="content-nav">
+                    <div class="notification-part">
+                        <a href="#">
+                            <img class="icon-nav" src="{% static 'images/icon-notification.png' %}">
+                        </a>
+                    </div>
+                    <div class="logout-part">
+                        <a href="{% url 'logout' %}">
+                            <img class="icon-nav" src="{% static 'images/icon-logout.png' %}">
+                        </a>
+                    </div>
+                </div>
+                <div class="content-title">
+                    <div class="title-option">
+                        <h3>TICKETS</h3>
+                    </div>
+                </div>
+                <div class="content-list">
+                </div>
             </div>
         </div>
 	</body>
