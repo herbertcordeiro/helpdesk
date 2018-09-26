@@ -67,10 +67,13 @@
                 </div>
                 <div class="content-title">
                     <div class="title-option">
-                        <h3>TICKETS</h3>
+                        <h3>{% block titulo  %} {% endblock %}</h3>
                     </div>
                 </div>
                 <div class="content-list">
+                {% block main %}
+
+                {% endblock %}
                 </div>
             </div>
         </div>

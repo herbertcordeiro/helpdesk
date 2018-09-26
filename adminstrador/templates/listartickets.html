@@ -1,19 +1,40 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-    <ul>
-        {% for ticket in tickets %}
-            <li> 
-             ID : {{ ticket.id }} <br>
-            NOME: {{ ticket.nome_completo }}<br>
-             Categoria: {{ ticket.categoria.nome }}<br>
-             STATUS: {{ ticket.get_status_display }}<br>
-            </li>
-             Atribuido: #
-        {% endfor %}
-    </ul>>
-</body>
-</html>
+{% extends 'basedashboard.html' %}
+
+{% block titulo  %} TICKET {% endblock %}
+
+
+{% block main %}
+
+
+<form action="{% url 'pesquisa' %}" method="GET">
+    <input  type="text" name="id" value="{{ id }}">
+    <input  class="btn-searchticket" type="submit" value="visualizar ticket">
+</form>
+
+<select id="status" onchange="myFunction()">
+    <option value="0">---</option>
+    <option value="1">novo</option>
+    <option value="2">resolvido</option>
+    <option value="3">em progresso</option>
+</select>
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("status").value;
+        location.href = "{% url 'inicial' %}?filter=" + x;
+    }
+</script>
+          
+<ul>
+    {% for ticket in tickets %}
+        <li> 
+         ID : {{ ticket.id }} <br>
+         NOME: {{ ticket.nome_completo }}<br>
+         Categoria: {{ ticket.categoria.nome }}<br>
+         STATUS: {{ ticket.get_status_display }}<br>
+        </li>
+         Atribuido: #
+    {% endfor %}
+</ul>
+
+{% endblock %}
