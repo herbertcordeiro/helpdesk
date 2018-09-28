@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from ticket.models import Ticket
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+
 
 @login_required
 def inicial(request):
@@ -8,7 +10,11 @@ def inicial(request):
     if(filter != None):
         tickets = Ticket.objects.filter(status=filter)
     else:
-        tickets = Ticket.objects.all()
+        tickets_list = Ticket.objects.all()
+        paginator = Paginator(tickets_list, 6)
+        page = request.GET.get('page')
+        tickets = paginator.get_page(page)
+
     return render(request, 'listartickets.html', {"tickets": tickets})
 
 
