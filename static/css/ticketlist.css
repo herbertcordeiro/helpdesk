@@ -34,12 +34,18 @@
 }
 
 .container-table {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: "list";
     margin: 5px 30px 0 30px;
     background-color: var(--white);
     height: auto;
 }
 
 .content-table {
+    display: grid;
+    grid-area: list;
     padding: 30px;
 }
 
@@ -82,4 +88,32 @@
     font-size: 14px;
     color: var(--dark-gray);
     content: "\f002"
+}
+
+.pagination {
+    text-align: right;
+    margin-top: 1em;
+    padding: 30px;
+}
+
+.pagination-action {
+    margin: 0 0.1em;
+    padding: 0.6em;
+    color: var(--dark-gray);
+}
+
+.pagination-number {
+    background-color: var(--gray);
+    padding: 0.2em 1.4em;
+    color: var(--white);
+    border-radius: 18px;
+}
+
+.pagination-number:hover,
+.pagination-current {
+    background-color: var(--dark-gray);
+}
+
+.pagination-action:hover {
+    color: var(--dark-red);
 }

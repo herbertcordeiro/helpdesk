@@ -23,23 +23,44 @@
 
 <div class="container-table">
     <div class="content-table">
-    <table class="table-list">
-        {% for ticket in tickets %}
-        <tr>
-            <td class="list-font">
-                # {{ ticket.id }} - {{ ticket.nome_completo }} <br>
-                Atribuido: ** 
-            </td>
-            <td class="list-font"> 
-                Categoria: {{ ticket.categoria.nome }} 
-            </td>
-            <td>
-                <div class="btn-status">
-                {{ ticket.get_status_display }} 
-                </div>
-            </td>
-        </tr>
+        <table class="table-list">
+            {% for ticket in tickets %}
+            <tr>
+                <td class="list-font">
+                    # {{ ticket.id }} - {{ ticket.nome_completo }} <br>
+                    Atribuido: ** 
+                </td>
+                <td class="list-font"> 
+                    Categoria: {{ ticket.categoria.nome }} 
+                </td>
+                <td>
+                    <div class="btn-status">
+                    {{ ticket.get_status_display }} 
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+        
+    <div class="pagination">
+        {% if tickets.has_previous %}
+            <a class="pagination-action" href="?page=1"> <i class="fas fa-angle-double-left"></i></a>
+            <a class="pagination-action" href="?page={{tickets.previous_page_number}}"> <i class="fas fa-angle-left"></i></a>
+        {% endif %}
+
+        {% for num in tickets.paginator.page_range %} 
+            {% if tickets.number == num %}
+                <span class="pagination-number pagination-current">{{num}}</span>
+            {% elif num > tickets.number|add:'-3' and num < tickets.number|add:'3' %}
+                <a class="pagination-number" href="?page={{num}}">{{num}}</a>
+            {% endif %}
         {% endfor %}
+
+        {% if tickets.has_next %}
+            <a class="pagination-action" href="?page={{tickets.next_page_number}}"> <i class="fas fa-angle-right"></i> </a>
+            <a class="pagination-action" href="?page={{tickets.paginator.num_pages}}"> <i class="fas fa-angle-double-right"></i></a>
+        {% endif %}
     </div>
 </div>
 
