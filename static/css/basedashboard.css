@@ -33,7 +33,8 @@
     background-color: var(--white);
 }
 
-.content-list {
+.container-list {
+    width: 100%;
     grid-area: list;
     background-color: var(--light-gray);
 }

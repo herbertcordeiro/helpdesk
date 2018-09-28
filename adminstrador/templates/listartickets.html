@@ -1,22 +1,47 @@
 {% extends 'basedashboard.html' %}
 
-{% block titulo  %} TICKET {% endblock %}
-
+{% block titulo  %} TICKETS {% endblock %}
 
 {% block main %}
 
+<div class="container-opticket">
+    <div class="content-filter">
+        <select class="select-filter" id="status" onchange="myFunction()">
+            <option value="0">filtrar</option>
+            <option value="1">novo</option>
+            <option value="2">resolvido</option>
+            <option value="3">em progresso</option>
+        </select>
+    </div>
+    <div class="content-search">
+        <form class="search" action="{% url 'pesquisa' %}" method="GET">
+            <input class="input-search" type="text" name="id" value="{{ id }}">
+            <div id="lupa"></div>
+        </form>
+    </div>
+</div>
 
-<form action="{% url 'pesquisa' %}" method="GET">
-    <input  type="text" name="id" value="{{ id }}">
-    <input  class="btn-searchticket" type="submit" value="visualizar ticket">
-</form>
-
-<select id="status" onchange="myFunction()">
-    <option value="0">---</option>
-    <option value="1">novo</option>
-    <option value="2">resolvido</option>
-    <option value="3">em progresso</option>
-</select>
+<div class="container-table">
+    <div class="content-table">
+    <table class="table-list">
+        {% for ticket in tickets %}
+        <tr>
+            <td class="list-font">
+                # {{ ticket.id }} - {{ ticket.nome_completo }} <br>
+                Atribuido: ** 
+            </td>
+            <td class="list-font"> 
+                Categoria: {{ ticket.categoria.nome }} 
+            </td>
+            <td>
+                <div class="btn-status">
+                {{ ticket.get_status_display }} 
+                </div>
+            </td>
+        </tr>
+        {% endfor %}
+    </div>
+</div>
 
 <script>
     function myFunction() {
@@ -24,17 +49,5 @@
         location.href = "{% url 'inicial' %}?filter=" + x;
     }
 </script>
-          
-<ul>
-    {% for ticket in tickets %}
-        <li> 
-         ID : {{ ticket.id }} <br>
-         NOME: {{ ticket.nome_completo }}<br>
-         Categoria: {{ ticket.categoria.nome }}<br>
-         STATUS: {{ ticket.get_status_display }}<br>
-        </li>
-         Atribuido: #
-    {% endfor %}
-</ul>
 
 {% endblock %}

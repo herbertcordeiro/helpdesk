@@ -7,9 +7,11 @@
 		<title> Helpdesk </title>
 		<meta name="viewport" content="width=device-width, inital-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="{% static 'css/reset.css' %}">
 		<link rel="stylesheet" href="{% static 'css/colors.css' %}">
         <link rel="stylesheet" href="{% static 'css/basedashboard.css' %}">
+        <link rel="stylesheet" href="{% static 'css/ticketlist.css' %}">
 	</head>
 	<body>
         <div class="container">
@@ -70,10 +72,9 @@
                         <h3>{% block titulo  %} {% endblock %}</h3>
                     </div>
                 </div>
-                <div class="content-list">
-                {% block main %}
-
-                {% endblock %}
+                <div class="container-list">
+                    {% block main %}
+                    {% endblock %}
                 </div>
             </div>
         </div>
