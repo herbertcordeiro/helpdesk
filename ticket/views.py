@@ -21,8 +21,8 @@ def pesquisa_ticket(id):
     ticket = Ticket.objects.get(id=id)
     return ticket
 
-def oxi(request):
-    ticket = pesquisa_ticket(request.GET['aff'])
+def mostrar_ticket(request):
+    ticket = pesquisa_ticket(request.GET['id'])
     context_dict = {'ticket': ticket}
     return render(request, 'mostrarticket.html', context = context_dict)
 
