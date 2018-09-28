@@ -119,8 +119,7 @@ a:active {
 
 .pagination {
     text-align: right;
-    margin-top: 1em;
-    padding: 30px;
+    padding: 20px;
 }
 
 .pagination-action {
@@ -139,6 +138,7 @@ a:active {
 .pagination-number:hover,
 .pagination-current {
     background-color: var(--dark-gray);
+    color: var(--white);
 }
 
 .pagination-action:hover {
