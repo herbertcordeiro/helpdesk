@@ -22,8 +22,8 @@
             <a href="{% url 'home' %}">
                   <img class="logo" src="../static/images/logo.png">
             </a>
-            <a class="links" href="#contact"><h4>contato</h4></a>
-            <a class="links" href="#about" ><h4>sobre</h4></a>
+            <a class="nav-link active scroll links" href="#contact"><h4>contato</h4></a>        
+                          <a class="nav-link active scroll links"href="#about" ><h4>sobre</h4></a>
                 {% if user.is_authenticated %}
                     <a class="links" href="{% url 'logout' %}">
                     <div class="btn-login"> Olá {{ user.username }}</div>
@@ -156,4 +156,27 @@ Sistemas de Informação a partir de um projeto da disciplina "Projeto Avançado
       <p>Copyright © 2018</p>
 </footer>
 
+<script type="text/javascript" src="src/js/index.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.modal').modal();
+    });
+    jQuery(document).ready(function($) {
+        $(".scroll").click(function(event) {
+            event.preventDefault();
+            $('html,body').animate({
+                scrollTop: $(this.hash).offset().top
+            }, 900);
+        });
+    });
+</script>
+<script>
+$(function () {
+  $(document).scroll(function () {
+    var $nav = $(".navbar");
+    $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+  });
+});
+</script>
 </html>
