@@ -8,9 +8,9 @@ class Categoria(models.Model):
 
 class Ticket(models.Model):
     STATUS = (
-        ('1', 'novo'),
-        ('2', 'resolvido'),
-        ('3', 'em progresso')
+        ('1', 'NOVO'),
+        ('2', 'ABERTO'),
+        ('3', 'FECHADO')
     )
     status = models.CharField(max_length=1, null=True, choices=STATUS, default='1')
     data_criacao=models.DateTimeField(auto_now_add=True)

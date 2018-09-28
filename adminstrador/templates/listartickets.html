@@ -5,6 +5,7 @@
 {% block main %}
 
 <div class="container-opticket">
+   
     <div class="content-filter">
         <select class="select-filter" id="status" onchange="myFunction()">
             <option value="0">filtrar</option>
@@ -13,6 +14,7 @@
             <option value="3">em progresso</option>
         </select>
     </div>
+    
     <div class="content-search">
         <form class="search" action="{% url 'pesquisa' %}" method="GET">
             <input class="input-search" type="text" name="id" value="{{ id }}">
@@ -34,9 +36,19 @@
                     Categoria: {{ ticket.categoria.nome }} 
                 </td>
                 <td>
-                    <div class="btn-status">
-                    {{ ticket.get_status_display }} 
-                    </div>
+                    {% if ticket.status == '1' %}
+                        <div class="btn-status">
+                        {{ ticket.get_status_display }} 
+                        </div>
+                    {% elif ticket.status == '2' %}
+                        <div class="btn-status2">
+                            {{ ticket.get_status_display }} 
+                        </div>
+                    {% elif ticket.status == '3' %}
+                        <div class="btn-status3">
+                            {{ ticket.get_status_display }} 
+                        </div>
+                    {% endif %}
                 </td>
             </tr>
             {% endfor %}
@@ -45,7 +57,6 @@
         
     <div class="pagination">
         {% if tickets.has_previous %}
-            <a class="pagination-action" href="?page=1"> <i class="fas fa-angle-double-left"></i></a>
             <a class="pagination-action" href="?page={{tickets.previous_page_number}}"> <i class="fas fa-angle-left"></i></a>
         {% endif %}
 

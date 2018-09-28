@@ -6,15 +6,23 @@ from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 
 @login_required
 def inicial(request):
-    tickets_list = Ticket.objects.all()
+    
+    filter = request.GET.get("filter", None)
+   
+    if(filter != None):
+        tickets_list = Ticket.objects.filter(status=filter)
+    else:
+        tickets_list = Ticket.objects.order_by("status").all()
+   
     paginator = Paginator(tickets_list, 5)
     page = request.GET.get('page')
     tickets = paginator.get_page(page)
-    return render(request, 'listartickets.html', {"tickets": tickets})
+   
+    return render(request, 'listartickets.html', {"tickets": tickets, 'filter': filter, 'page': page })
 
 
 @login_required
-def pesquisa_id_nome(request):
+def pesquisa_id(request):
     filter = request.GET.get("id", None)
     if(filter != None):
         tickets2 = Ticket.objects.filter(id=filter)
