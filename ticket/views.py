@@ -23,6 +23,7 @@ def pesquisa_ticket(id):
 
 def mostrar_ticket(request):
     ticket = pesquisa_ticket(request.GET['id'])
+    
     context_dict = {'ticket': ticket}
     return render(request, 'mostrarticket.html', context = context_dict)
 
