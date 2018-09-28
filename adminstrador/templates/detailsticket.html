@@ -1,0 +1,40 @@
+{% extends 'basedashboard.html' %}
+
+{% block titulo  %} DETALHES TICKET {% endblock %}
+
+{% block main %}
+
+<div class="container-details">
+    <div class="content-details">
+        <h3> Ticket de {{ticket.nome_completo}} </h3>
+    </div>
+</div>
+<div class="container-listticket">
+    <div class="content-listticket">
+        <div class="content-date">
+            <h4>Criado em: {{ticket.data_criacao}}<h4>
+        </div>
+        <div class="ticket-details">
+            <div class="details-list">
+				<p>ID: </p>
+				<p>Status do ticket: </p>
+				<p>Categoria: </p>
+				<p>Nome e Sobrenome: </p>
+				<p>Email: </p>
+				<p>Telefone: </p>
+				<p>Descrição: </p>
+			</div>
+			<div class="details-atribute">
+				<p>{{ticket.id}}</p>
+				<p>{{ticket.get_status_display}}</p>
+				<p>{{ticket.categoria.nome}}</p>
+				<p>{{ticket.nome_completo}}</p>
+				<p>{{ticket.email}}</p>
+				<p>{{ticket.telefone}}</p>
+				<p>{{ticket.descricao}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

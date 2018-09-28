@@ -46,7 +46,7 @@
 					</div>
 					<div class="part-atribute">
 						<p>{{ticket.id}}</p>
-						<p>STATUS</p>
+						<p>{{ticket.get_status_display}}</p>
 						<p>{{ticket.data_criacao}}</p>
 						<p>DATA</p>
 						<p>{{ticket.categoria.nome}}</p>
@@ -55,7 +55,7 @@
 						<p>{{ticket.telefone}}</p>
 						<p>{{ticket.descricao}}</p>
 						<form action="{% url 'optionticket' %}" method="GET">
-							<input class="btn-login" type="submit" value="voltar">
+							<input class="btn-cancel" type="submit" value="voltar">
 						</form>
 					</div>
 				</div>
