@@ -10,20 +10,13 @@ def newticket(request):
         context_dict = {'ticket': ticket}
         return render(request, 'mostrarticket.html', context = context_dict)
     return render(request, 'newticket.html', {'form': form})
-
-def optionticket(request):
-    return render(request, 'optionticket.html')
-
-def searchticket(request):
-    return render(request, 'searchticket.html')
-
+    
 def pesquisa_ticket(id):
     ticket = Ticket.objects.get(id=id)
     return ticket
 
 def mostrar_ticket(request):
     ticket = pesquisa_ticket(request.GET['id'])
-    
     context_dict = {'ticket': ticket}
     return render(request, 'mostrarticket.html', context = context_dict)
 
