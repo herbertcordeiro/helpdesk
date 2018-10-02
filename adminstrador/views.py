@@ -7,13 +7,10 @@ from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 @login_required
 def inicial(request):
     filter = request.GET.get("filter", 'None')
-    filter = request.GET.get("filter", 'None')
-    print(type(filter))
     if(filter != 'None'):
         tickets_list = Ticket.objects.filter(status=filter)
     else:
         tickets_list = Ticket.objects.order_by("status").all()
-
     paginator = Paginator(tickets_list, 5)
     page = request.GET.get('page')
     tickets = paginator.get_page(page) 
