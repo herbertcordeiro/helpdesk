@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from django.conf.urls import handler404
 from .views import handler404,handler500
 from django.contrib.auth import views as auth_views
@@ -18,7 +18,7 @@ urlpatterns = [
     path('login/', auth_views.login, name='login'),
     path('esqueceu-senha/', password_reset, name='esqueceu-senha'),
     path('esqueceu-senha/concluido', password_reset_done, name='password_reset_done'),
-    path('esqueceu-senha/confirmacao/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)/', password_reset_confirm, name='password_reset_confirm'),
+    re_path('esqueceu-senha/confirmacao/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)/', password_reset_confirm, name='password_reset_confirm'),
      path('esqueceu-senha/completo/', password_reset_complete, name='password_reset_complete'),
 
 ]
