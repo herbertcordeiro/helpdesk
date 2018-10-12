@@ -1,0 +1,11 @@
+{% extends 'basedashboard.html' %}
+
+{% block titulo  %} Users {% endblock %}
+
+{% block main %}
+<table>
+    {% for user in userList %}
+        {{user.username}}
+    {% endfor %}
+</table>
+{% endblock %}
