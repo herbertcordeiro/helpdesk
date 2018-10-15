@@ -1,4 +1,4 @@
-.container-opticket {
+.container-adm {
     display: grid;
     grid-template-columns: 1fr 1fr;
     background-color: var(--white);
@@ -33,7 +33,7 @@
     margin-right: 5px;
 }
 
-.container-table {
+.container-adm-list {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
@@ -43,13 +43,13 @@
     height: auto;
 }
 
-.content-table {
+.content-adm-list {
     display: grid;
     grid-area: list;
     padding: 30px;
 }
 
-.table-list {
+.list {
     width: 100%;
     border-collapse: collapse;
 }
@@ -58,50 +58,50 @@
     font-weight: 600;
 }
 
-.table-list th,
-.table-list td {
+.list th,
+.list td {
     text-align: left;
     padding: 14px;
 }
 
-.table-list a:visited,
+.list a:visited,
 a:link,
 a:hover,
 a:active {
     color: var(--dark-gray);
 }
 
-.table-list .btn-status {
-    width: 120px;
-    height: 30px;
-    background-color: var(--dark-red);
+.list .btn-status {
+    width: 80px;
+    background-color: var(--red);
     color: var(--white);
     border-radius: 20px;
     text-align: center;
+    padding: 5px;
     margin: auto;
 }
 
-.table-list .btn-status2 {
-    width: 120px;
-    height: 30px;
+.list .btn-status2 {
+    width: 80px;
     background-color: var(--green);
     color: var(--white);
     border-radius: 20px;
     text-align: center;
+    padding: 5px;
     margin: auto;
 }
 
-.table-list .btn-status3 {
-    width: 120px;
-    height: 30px;
+.list .btn-status3 {
+    width: 80px;
     background-color: var(--yellow);
     color: var(--dark-gray);
     border-radius: 20px;
     text-align: center;
+    padding: 5px;
     margin: auto;
 }
 
-.table-list tr:nth-child(odd) {
+.list tr:nth-child(odd) {
     background-color: var(--light-gray);
 }
 

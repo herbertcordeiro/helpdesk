@@ -1,16 +1,37 @@
 {% extends 'basedashboard.html' %}
 
-{% block titulo  %} Users {% endblock %}
+{% block titulo  %} Usuários  {% endblock %}
 
 {% block main %}
 
-<center><a href="{% url 'newUser' %}">
-   cadastrar
-</a>
-</center>
-<table>
-    {% for user in userList %}
-        username = {{user.username}} <br>
-    {% endfor %}
-</table>
+<div class="container-adm">
+    <a href="{% url 'newUser' %}"><div class="btn-new"> NOVO USUÁRIO</div></a> 
+</div>
+
+<div class="container-adm-list">
+    <div class="content-adm-list">
+        <table class="list">
+            {% for user in userList %}
+            <tr>
+                <td class="list-font">
+                    Nome: {{user.first_name}} {{user.last_name}} <br>
+                    Usuário: {{ user.username }} 
+                </td>
+                <td class="list-font"> 
+                    Email: {{ user.email }} 
+                </td>
+                <td>
+                    <a href="#">
+                        <img class="icon-user" src="../static/images/icon-edit.png">
+                    </a>
+                    <a href="#">
+                        <img class="icon-user" src="../static/images/icon-delete.png">
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
 {% endblock %}

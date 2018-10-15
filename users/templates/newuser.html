@@ -1,13 +1,35 @@
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-    <form action="" method="post">
-        {% csrf_token %}
-        {{ form.as_p }} 
-        <button type="submit"> Cadastro </button>
-    </form>
-</body>
-</html>
+{% extends 'basedashboard.html' %}
+
+{% block titulo  %} Usuários  {% endblock %}
+
+{% block main %}
+
+<div class="container-adm">
+	<h2> Cadastrar Usuário </h2>
+</div>
+
+<div class="container-adm-list">
+    <div class="content-adm-list">
+        <form action="" method="post">
+            {% csrf_token %}
+            <div>
+                <p>Nome:</p>
+                <p>Sobrenome:</p>
+                <p>Email:</p>
+                <p>Usuário:</p>
+                <p>Senha:</p>
+            </div>
+            <div>
+                <div class="input">{{ form.first_name }}</div>
+                <div class="input">{{ form.last_name }}</div>
+                <div class="input">{{ form.email }}</div>
+                <div class="input">{{ form.username }}</div>
+                <div class="input">{{ form.password }}</div>
+            </div>
+            <button type="submit"> Cadastro </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
     

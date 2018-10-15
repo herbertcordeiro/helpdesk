@@ -1,0 +1,10 @@
+.container-adm h2 {
+    padding-left: 30px;
+}
+
+.content-adm-list p {
+    font-size: 1em;
+    margin: 14px auto;
+    color: var(--dark-gray);
+
+}
