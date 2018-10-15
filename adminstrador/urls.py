@@ -1,8 +1,5 @@
 from django.urls import path
-from .views import inicial
-from .views import details
-from .views import pesquisa_id
-
+from .views import inicial, details, pesquisa_id
 
 urlpatterns = [
     path('inicial/', inicial, name='inicial'),

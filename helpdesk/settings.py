@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'home',
     'adminstrador',
     'users',
+    'relatorios',
 ]
 
 MIDDLEWARE = [
