@@ -4,8 +4,8 @@
 
 {% block main %}
 
-<div class="container-opticket">
-   
+<div class="container-adm">
+
     <div class="content-filter">
         <select class="select-filter" id="status" onchange="myFunction()">
             <option value="0">filtrar</option>
@@ -23,9 +23,9 @@
     </div>
 </div>
 
-<div class="container-table">
-    <div class="content-table">
-        <table class="table-list">
+<div class="container-adm-list">
+    <div class="content-adm-list">
+        <table class="list">
             {% for ticket in tickets %}
             <tr>
                 <td class="list-font">

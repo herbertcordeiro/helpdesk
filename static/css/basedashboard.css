@@ -82,7 +82,7 @@
 
 .option:hover {
     background-color: var(--gray);
-    border-left: 2pt solid var(--dark-red);
+    border-left: 2pt solid var(--red);
 }
 
 .logout-part,
