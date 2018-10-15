@@ -17,9 +17,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', auth_views.login, name='login'),
     path('esqueceu-senha/', password_reset, name='esqueceu-senha'),
-    path('esqueceu-senha/concluido', password_reset_done, name='password_reset_done'),
+    path('login/', password_reset_done, name='password_reset_done'),
     re_path('esqueceu-senha/confirmacao/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)/', password_reset_confirm, name='password_reset_confirm'),
-     path('esqueceu-senha/completo/', password_reset_complete, name='password_reset_complete'),
+     path('login/', password_reset_complete, name='password_reset_complete'),
 
 ]
 

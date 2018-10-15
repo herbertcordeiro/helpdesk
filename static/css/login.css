@@ -54,7 +54,14 @@
     text-transform: uppercase;
 }
 
-button {
+#recover-pass {
+    color: var(--dark-gray);
+    margin: 0 auto;
+    font-size: 0.75em;
+    text-decoration: none;
+}
+
+.login .btn {
     display: grid;
     align-content: center;
     color: var(--white);
@@ -68,9 +75,11 @@ button {
     margin: 40px auto;
 }
 
-#recover-pass {
-    color: var(--dark-gray);
-    margin: 0 auto;
-    font-size: 0.75em;
-    text-decoration: none;
+.login ul {
+    padding-top: 30px;
+}
+
+.login li {
+    font-size: 0.7em;
+    color: var(--red);
 }

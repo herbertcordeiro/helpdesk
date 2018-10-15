@@ -24,7 +24,7 @@
               	<form method="post">
                 {% csrf_token %}
                 {{ form.as_p }} 
-                <button type="submit"> Login </button>
+                <button class="btn" type="submit"> Login </button>
                 </form>
             </div>
             <a href="{% url 'esqueceu-senha' %}" id="recover-pass"><p >Esqueceu a senha?</p></a>
