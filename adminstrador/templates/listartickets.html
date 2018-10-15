@@ -79,8 +79,10 @@
 
 <script>
     function myFunction() {
+       
         var x = document.getElementById("status").value;
         location.href = "{% url 'inicial' %}?filter=" + x;
+
     }
 </script>
 

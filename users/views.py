@@ -5,7 +5,8 @@ from django.contrib.auth.models import User
 def newUser(request):
     form = UserForm(request.POST, request.FILES, None)
     if form.is_valid():
-        user = form.save()
+        form.save()
+        print('oxi')
     return render(request, 'newUser.html', {'form': form})
     
 def users(request):

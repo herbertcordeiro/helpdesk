@@ -3,9 +3,14 @@
 {% block titulo  %} Users {% endblock %}
 
 {% block main %}
+
+<center><a href="{% url 'newUser' %}">
+   cadastrar
+</a>
+</center>
 <table>
     {% for user in userList %}
-        {{user.username}}
+        username = {{user.username}} <br>
     {% endfor %}
 </table>
 {% endblock %}
