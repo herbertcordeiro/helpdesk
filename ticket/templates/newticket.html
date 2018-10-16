@@ -48,7 +48,7 @@
                             <div>{{ form.anexo }}</div>
                             <div class="input">{{ form.descricao }}</div>
                         </div>
-                        <input class="btn-newticket" type="submit" value="enviar ticket">
+                        <input class="btn-newticket" onclick="confirmation()" type="submit" value="enviar ticket">
                         <a class="btn-cancel" href="{% url 'optionticket' %}" >
                             cancelar
                         </a>
@@ -57,6 +57,12 @@
                 </div>
             </div>
         </div>
+        <script type="text/javascript">
+        function confirmation() {
+            alert("Ticket cadastrado com sucesso");
+      }
+        </script>
+      
         <footer>
             <p>Copyright © 2018</p>
         </footer>
