@@ -4,12 +4,15 @@
 
 {% block main %}
 
-<div class="container-adm">
-    <h3> Usuários no Sistema </h3>
+<div class="container-user">
+    <h3 class="title-user"> Usuários no Sistema </h3>
+    <a href="{% url 'newUser' %}" class="btn">
+        <div class="btn-new"> NOVO USUÁRIO </div>
+    </a>
 </div>
 
-<div class="container-adm-list">
-    <div class="content-adm-list">
+<div class="container-user-list">
+    <div class="content-user-list">
         <table class="list">
             {% for user in userList %}
             <tr>
@@ -24,16 +27,13 @@
                     <a href="#">
                         <img class="icon-user" src="../static/images/icon-edit.png">
                     </a>
-                    <a href="{% url 'user_delete' user.id %}">
+                    <a href="#">
                         <img class="icon-user" src="../static/images/icon-delete.png">
                     </a>
                 </td>
             </tr>
             {% endfor %}
         </table>
-        <div>
-            <a href="{% url 'newUser' %}"><div class="btn-new"> NOVO USUÁRIO </div></a> 
-        </div>
     </div>
 </div>
 

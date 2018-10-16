@@ -6,7 +6,11 @@
 
 <div class="container-title-report">
 	<h3 class="title-report"> Relátorios de Tickets </h3>
+    <a href="{% url 'newUser' %}" class="btn">
+        <div class="btn-new"> GERAR PDF </div>
+    </a>
 </div>
+
 <div class="container-report">
     <div class="content-report">
         <div class="grafico-linha">
@@ -28,21 +32,19 @@
                 label: 'Produtos',
                 data: total,
                 backgroundColor: [
-                    'rgba(255, 99, 132, 1)',
+                    'rgba(255, 0, 66, 1)',
                     'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
+                    'rgba(255, 204, 0, 1)',
                 ],
                 borderColor: [
-                    'rgba(255,99,132,1)',
+                    'rgba(255, 0, 66, 1)',
                     'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
+                    'rgba(255, 204, 0, 1)',
                 ],
                 borderWidth: 1
             }]
         },
-
     });
-
     var ctz = document.getElementById("grafico_linha");
     var productsChart = new Chart(ctz, {
         type: 'line',
@@ -53,10 +55,10 @@
                 data: [65,59,80,81,56,55,40],
                 fill: false,
                 backgroundColor: [
-                    'rgba(255, 99, 132, 1)',
+                    'rgba(255, 0, 66, 1)',
                 ],
                 borderColor: [
-                    'rgba(255,99,132,1)',
+                    'rgba(255, 0, 66, 1)',
                 ],
                 lineTension: 0.3
             },{
@@ -75,17 +77,15 @@
                 data: [100,110,50,90,20,70,72],
                 fill: false,
                 backgroundColor: [
-                    'rgba(255, 206, 86, 1)',
+                    'rgba(255, 204, 0, 1)',
                 ],
                 borderColor: [
-                    'rgba(255, 206, 86, 1)',
+                    'rgba(255, 204, 0, 1)',
                 ],
                 lineTension: 0.3
             }]
             
         },
-
     });
-
 </script>
 {% endblock %}
