@@ -22,6 +22,7 @@
             <div class="details-list">
 				<p>ID: </p>
 				<p>Status do ticket: </p>
+				<p>Data do termino: </p>
 				<p>Categoria: </p>
 				<p>Nome e Sobrenome: </p>
 				<p>Email: </p>
@@ -30,7 +31,11 @@
 			</div>
 			<div class="details-atribute">
 				<p>{{ticket.id}}</p>
-				<p>{{ticket.get_status_display}}</p>
+				
+				<p>{{form.status}}</p>
+				
+				<p>{{form.data_entrega}}</p>
+		
 				<p>{{ticket.categoria.nome}}</p>
 				<p>{{ticket.nome_completo}}</p>
 				<p>{{ticket.email}}</p>

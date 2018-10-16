@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from ticket.models import Ticket
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from ticket.forms import TicketForm
 
 
 @login_required
@@ -29,4 +30,5 @@ def pesquisa_id(request):
 @login_required
 def details(request, id):
     ticket = Ticket.objects.get(id = id)
-    return render(request, 'detailsticket.html', {'ticket': ticket})
+    form = TicketForm(instance=ticket)
+    return render(request, 'detailsticket.html', {'ticket': ticket, 'form': form})

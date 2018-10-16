@@ -1,7 +1,8 @@
-from django.forms import ModelForm
+from django import forms
 from ticket.models import Ticket
+from django.contrib.admin import widgets  
 
-class TicketForm(ModelForm):
+class TicketForm(forms.ModelForm):
     class Meta:
         model = Ticket
         fields = ["nome_completo", "email", "telefone", "categoria", "anexo", "descricao"]
