@@ -15,7 +15,6 @@
 			<h4>
 				Criado em: {{ ticket.data_criacao|date:"d/m/Y H:i A"  }}
 				Atualizado: {{ticket.modified|date:"d/m/Y H:i A"  }}
-				Validade: {{ticket.data_entrega|date:"d/m/Y H:i A"  }}
 			</h4>
         </div>
         <div class="ticket-details">
@@ -31,11 +30,6 @@
 			</div>
 			<div class="details-atribute">
 				<p>{{ticket.id}}</p>
-				
-				<p>{{form.status}}</p>
-				
-				<p>{{form.data_entrega}}</p>
-		
 				<p>{{ticket.categoria.nome}}</p>
 				<p>{{ticket.nome_completo}}</p>
 				<p>{{ticket.email}}</p>
