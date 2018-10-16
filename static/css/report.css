@@ -1,5 +1,7 @@
 .container-title-report {
     display: grid;
+    grid-template-columns: 1fr 1fr;
+
     background-color: var(--white);
     height: 80px;
     margin: 30px 30px 0 30px;
@@ -26,6 +28,10 @@
 }
 
 .title-report {
+    display: grid;
+    grid-template-columns: 1fr;
+    color: var(--dark-gray);
+    align-content: center;
     padding-left: 30px;
 }
 
