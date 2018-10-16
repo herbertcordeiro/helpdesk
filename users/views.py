@@ -5,7 +5,13 @@ from django.contrib.auth.models import User
 def newUser(request):
     form = UserForm(request.POST, request.FILES, None)
     if form.is_valid():
-        form.save()
+        nome = form.cleaned_data['first_name']
+        sobrenome = form.cleaned_data['last_name']
+        email = form.cleaned_data['email']
+        username = form.cleaned_data['username']
+        senha = form.cleaned_data['password']
+        new_user = User.objects.create_user(first_name=nome, last_name=sobrenome,email=email,username=username,password=senha)
+        new_user.save()
         return redirect ('users')
     return render(request, 'newUser.html', {'form': form})
     
