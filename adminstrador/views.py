@@ -20,10 +20,10 @@ def inicial(request):
 @login_required
 def pesquisa_id(request):
     filter = request.GET.get("id", None)
-    if(filter != None):
-        tickets2 = Ticket.objects.filter(user=request.user).filter(id=filter)  
+    if(request.user.is_superuser):
+        tickets2 = Ticket.objects.filter(id=filter) 
     else:
-        tickets2 = Ticket.objects.all()
+        tickets2 = Ticket.objects.filter(user=request.user).filter(id=filter)  
     return render(request, 'listartickets.html', {"tickets": tickets2})
 
 @login_required
