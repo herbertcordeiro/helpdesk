@@ -25,8 +25,8 @@
 }
 
 .newticket p {
-    font-size: 0.75em;
-    margin: 14px auto;
+    font-size: 0.8em;
+    margin: 12px auto;
     color: var(--dark-gray);
 }
 
