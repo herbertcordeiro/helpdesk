@@ -15,23 +15,25 @@
     <div class="content-user-list">
         <table class="list">
             {% for user in userList %}
-            <tr>
-                <td class="list-font">
-                    Nome: {{user.first_name}} {{user.last_name}} <br>
-                    Usuário: {{ user.username }} 
-                </td>
-                <td class="list-font"> 
-                    Email: {{ user.email }} 
-                </td>
-                <td>
-                    <a href="#">
-                        <img class="icon-user" src="../static/images/icon-edit.png">
-                    </a>
-                    <a href="#">
-                        <img class="icon-user" src="../static/images/icon-delete.png">
-                    </a>
-                </td>
-            </tr>
+                {% if user.username != "admin" %}
+                    <tr>
+                        <td class="list-font">
+                            Nome: {{user.first_name}} {{user.last_name}} <br>
+                            Usuário: {{ user.username }} 
+                        </td>
+                        <td class="list-font"> 
+                            Email: {{ user.email }} 
+                        </td>
+                        <td>
+                            <a href="#">
+                                <img class="icon-user" src="../static/images/icon-edit.png">
+                            </a>
+                            <a href="{% url 'user_delete' user.id %}">
+                                <img class="icon-user" src="../static/images/icon-delete.png">
+                            </a>
+                        </td>
+                    </tr>
+                {% endif %}
             {% endfor %}
         </table>
     </div>
