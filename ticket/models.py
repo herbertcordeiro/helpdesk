@@ -1,5 +1,6 @@
 from django.db import models
-from datetime import timedelta, datetime
+from django.contrib.auth.models import User
+
 
 class Categoria(models.Model):
     nome=models.CharField(max_length=100)
@@ -22,4 +23,4 @@ class Ticket(models.Model):
     telefone = models.CharField(max_length=14)
     anexo = models.FileField(upload_to='post_image', blank=True)
     descricao = models.TextField()
-
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)

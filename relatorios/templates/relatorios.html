@@ -1,12 +1,21 @@
 {% extends 'basedashboard.html' %}
 
-{% block titulo %} RELATÓRIOS DE TICKETS {% endblock %}
+{% block titulo %} RELATÓRIOS {% endblock %}
 
 {% block main %}
-<div class="container-grafico">
-    
-    <canvas id="grafico_linha"></canvas>
-    <canvas id="grafico_pizza"></canvas>
+
+<div class="container-title-report">
+	<h3 class="title-report"> Relátorios de Tickets </h3>
+</div>
+<div class="container-report">
+    <div class="content-report">
+        <div class="grafico-linha">
+            <canvas id="grafico_linha"></canvas>
+        </div>
+        <div class="grafico-pizza">
+            <canvas id="grafico_pizza"></canvas>
+        </div>
+    </div>
 </div>
 <script>
     var ctx = document.getElementById("grafico_pizza");

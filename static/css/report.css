@@ -1,0 +1,42 @@
+.container-title-report {
+    display: grid;
+    background-color: var(--white);
+    height: 80px;
+    margin: 30px 30px 0 30px;
+    align-content: center;
+}
+
+.container-report {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 5px 30px 0 30px;
+    background-color: var(--white);
+    height: auto;
+}
+
+.content-report {
+    display: grid;
+    grid-template-columns: 33% 67%;
+    grid-template-areas: "pizza linha";
+    grid-gap: 20px;
+}
+
+.content-report {
+    padding: 30px;
+}
+
+.title-report {
+    padding-left: 30px;
+}
+
+.grafico-linha {
+    display: grid;
+    grid-area: linha;
+    width: 95%;
+}
+
+.grafico-pizza {
+    display: grid;
+    grid-area: pizza;
+    width: 95%;
+}

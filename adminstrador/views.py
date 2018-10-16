@@ -4,19 +4,25 @@ from ticket.models import Ticket
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from ticket.forms import TicketForm
 
-
 @login_required
 def inicial(request):
-    filter = request.GET.get("filter", 'None')
-    if(filter != 'None'):
-        tickets_list = Ticket.objects.filter(status=filter)
-    else:
-        tickets_list = Ticket.objects.order_by("status").all()
+    tickets_list = listaDeTickts(request)
     paginator = Paginator(tickets_list, 5)
     page = request.GET.get('page')
     tickets = paginator.get_page(page) 
     return render(request, 'listartickets.html', {"tickets": tickets, 'filter': filter, 'page': page })
 
+@login_required
+def listaDeTickts(request):
+    tickets = Ticket.objects.all()
+    tickets2 = []
+    if(request.user.is_superuser):
+        return tickets
+    else:
+        for ticket in tickets:
+            if(ticket.user == request.user):
+                tickets2.append(ticket)
+        return tickets2
 
 @login_required
 def pesquisa_id(request):
