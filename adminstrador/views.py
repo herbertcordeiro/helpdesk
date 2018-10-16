@@ -2,7 +2,8 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from ticket.models import Ticket
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
-from ticket.forms import TicketForm
+from .forms import TicketForm
+from django.shortcuts import redirect
 
 @login_required
 def inicial(request):
@@ -36,5 +37,10 @@ def pesquisa_id(request):
 @login_required
 def details(request, id):
     ticket = Ticket.objects.get(id = id)
-    form = TicketForm(instance=ticket)
+    if request.method == 'POST':
+        form = TicketForm(request.POST, instance=ticket)
+        form.save()
+        return redirect('inicial')
+    else:
+        form = TicketForm(instance=ticket)
     return render(request, 'detailsticket.html', {'ticket': ticket, 'form': form})
