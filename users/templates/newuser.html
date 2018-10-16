@@ -12,21 +12,14 @@
     <div class="content-adm-list">
         <form action="" method="post">
             {% csrf_token %}
-            <div>
-                <p>Nome:</p>
-                <p>Sobrenome:</p>
-                <p>Email:</p>
-                <p>Usuário:</p>
-                <p>Senha:</p>
+            <div class="cad">
+                <p>Nome: {{ form.first_name }}</p>
+                <p>Sobrenome: {{ form.last_name }}</p>
+                <p>Email: {{ form.email }}</p>
+                <p>Usuário: {{ form.username }}</p>
+                <p>Senha: {{ form.password }}</p>
             </div>
-            <div>
-                <div class="input">{{ form.first_name }}</div>
-                <div class="input">{{ form.last_name }}</div>
-                <div class="input">{{ form.email }}</div>
-                <div class="input">{{ form.username }}</div>
-                <div class="input">{{ form.password }}</div>
-            </div>
-            <button type="submit"> Cadastro </button>
+            <button class="btn-newuser" type="submit"> Cadastro </button>
         </form>
     </div>
 </div>
