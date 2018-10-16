@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from ticket.models import Ticket
 
 
+
 @login_required
 def relatorios(request):
     total=[]
@@ -27,6 +28,4 @@ def relatorios(request):
         'categoria': json.dumps(categoria),
     }
     return render(request, 'relatorios.html', context)
-
-    
 

@@ -4,8 +4,9 @@
 
 {% block main %}
 <div class="container-grafico">
+    
+    <canvas id="grafico_linha"></canvas>
     <canvas id="grafico_pizza"></canvas>
-    <canvas id="grafico_line"></canvas>
 </div>
 <script>
     var ctx = document.getElementById("grafico_pizza");
@@ -33,6 +34,49 @@
 
     });
 
+    var ctz = document.getElementById("grafico_linha");
+    var productsChart = new Chart(ctz, {
+        type: 'line',
+        data: {
+            labels: ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"],
+            datasets: [{
+                label: 'Novo',
+                data: [65,59,80,81,56,55,40],
+                fill: false,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 1)',
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                ],
+                lineTension: 0.3
+            },{
+                label: 'Aberto',
+                data: [70,40,85,80,96,51,49],
+                fill: false,
+                backgroundColor: [
+                    'rgba(54, 162, 235, 1)',
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)',
+                ],
+                lineTension: 0.3 
+            },{
+                label: 'Fechado',
+                data: [100,110,50,90,20,70,72],
+                fill: false,
+                backgroundColor: [
+                    'rgba(255, 206, 86, 1)',
+                ],
+                borderColor: [
+                    'rgba(255, 206, 86, 1)',
+                ],
+                lineTension: 0.3
+            }]
+            
+        },
+
+    });
 
 </script>
 {% endblock %}
