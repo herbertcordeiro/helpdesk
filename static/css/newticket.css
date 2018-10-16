@@ -57,7 +57,7 @@
 .btn-newticket {
     color: var(--white);
     text-align: center;
-    width: 155px;
+    width: 140px;
     height: 20px;
     border-radius: 40px;
     background-color: var(--red);
@@ -94,11 +94,12 @@ footer {
 }
 
 .btn-cancel {
+    font-size :0.9em;
     color: var(--white);
     text-align: center;
-    width: 155px;
+    width: 140px;
     height: 20px;
     border-radius: 40px;
     background-color: var(--dark-gray);
-    margin: 5px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
 }

@@ -49,9 +49,9 @@
                             <div class="input">{{ form.descricao }}</div>
                         </div>
                         <input class="btn-newticket" onclick="confirmation()" type="submit" value="enviar ticket">
-                        <a class="btn-cancel" href="{% url 'optionticket' %}" >
+                        <button class="btn-cancel" onclick = "window.location.href='http://127.0.0.1:8000/tickets/optionticket/'" >
                             cancelar
-                        </a>
+                        </button>
                     </form>
 
                 </div>
