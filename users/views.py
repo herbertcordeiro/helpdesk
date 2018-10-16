@@ -1,7 +1,11 @@
 from django.shortcuts import render, HttpResponseRedirect, redirect
 from .forms import UserForm
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import permission_required
+from adminstrador.urls import inicial
 
+@permission_required('polls.can_vote', login_url='inicial')
 def newUser(request):
     form = UserForm(request.POST, request.FILES, None)
     if form.is_valid():
@@ -14,11 +18,13 @@ def newUser(request):
         new_user.save()
         return redirect ('users')
     return render(request, 'newUser.html', {'form': form})
-    
+
+@permission_required('polls.can_vote', login_url='inicial')
 def users(request):
     userList = User.objects.values()
     return render(request, 'users.html', {"userList": userList})
 
+@permission_required('polls.can_vote', login_url='inicial')
 def delete_users(request, user_id):
     user = User.objects.get(pk=user_id)
     user.delete()
