@@ -70,3 +70,14 @@ footer {
     color: var(--white);
     background-color: var(--dark-gray);
 }
+
+.error{
+    display:grid; 
+    background-color:  var(--light-gray);
+    text-align: center;
+    width: 460px;
+    border-radius: 12px;
+    padding: 15px;
+    color:var(--red);
+    border:solid 1px var(--light-gray);
+}
