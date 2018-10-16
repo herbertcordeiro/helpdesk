@@ -4,25 +4,27 @@
 
 {% block main %}
 
-<div class="container-adm">
-	<h2> Cadastrar Usuário </h2>
+<div class="container-title-newuser">
+	<h2 class="title-user"> Cadastrar Usuário </h2>
 </div>
 
-<div class="container-adm-list">
-    <div class="content-adm-list">
+<div class="container-newuser">
+    <div class="content-newuser">
         <form action="" method="post">
             {% csrf_token %}
-            <div class="cad">
-                <p>Nome: {{ form.first_name }}</p>
-                <p>Sobrenome: {{ form.last_name }}</p>
-                <p>Email: {{ form.email }}</p>
-                <p>Usuário: {{ form.username }}</p>
-                <p>Senha: {{ form.password }}</p>
-            </div>
-            <button class="btn-newuser" type="submit"> Cadastro </button>
+                <label>Nome:</label>
+                <p>{{ form.first_name }}</p>
+                <label>Sobrenome:</label>
+                <p>{{ form.last_name }}</p>
+                <label>Email:</label>
+                <p>{{ form.email }}</p>
+                <label>Nome de usuário:</label>
+                <p>{{ form.username }}</p>
+                <label>Senha:</label>
+                <p>{{ form.password }}</p>
+            <button class="btn-newuser" type="submit"> CADASTRAR </button>
         </form>
     </div>
 </div>
 
 {% endblock %}
-    
