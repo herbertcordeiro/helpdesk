@@ -83,3 +83,18 @@
     font-size: 0.7em;
     color: var(--red);
 }
+
+.login .btn-es {
+    align-items: center;
+    color: var(--white);
+    background-color: var(--dark-gray);
+    width: 299.3px;
+    height: 26px;
+    border-radius: 40px;
+    text-align: center;
+    font-size: 1em;
+    text-transform: uppercase;
+    text-align: center;
+    margin:40px auto;
+
+}
