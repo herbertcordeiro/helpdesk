@@ -7,14 +7,19 @@ from django.shortcuts import redirect
 
 @login_required
 def inicial(request):
-    if(request.user.is_superuser):
-        tickets_list = Ticket.objects.all()
-    else:
-        tickets_list = Ticket.objects.filter(user=request.user)     
+    tickets_list=listartickets(request)    
     paginator = Paginator(tickets_list, 5)
     page = request.GET.get('page')
     tickets = paginator.get_page(page) 
     return render(request, 'listartickets.html', {"tickets": tickets, 'filter': filter, 'page': page })
+
+@login_required
+def listartickets(request):
+    if(request.user.is_superuser):
+        tickets_list = Ticket.objects.all()
+    else:
+        tickets_list = Ticket.objects.filter(user=request.user)
+    return tickets_list
 
 
 @login_required

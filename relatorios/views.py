@@ -2,6 +2,7 @@ import json
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from ticket.models import Ticket
+from adminstrador.views import listartickets
 
 @login_required
 def relatorios(request):
@@ -9,7 +10,7 @@ def relatorios(request):
     total_novo=0
     total_aberto=0
     total_fechado=0
-    tickets = Ticket.objects.all()
+    tickets = listartickets(request)
     for i in tickets:
         if i.status=='1':
             total_novo=total_novo+1
@@ -26,4 +27,6 @@ def relatorios(request):
         'categoria': json.dumps(categoria),
     }
     return render(request, 'relatorios.html', context)
+
+
 
