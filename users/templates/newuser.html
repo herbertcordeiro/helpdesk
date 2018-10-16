@@ -22,9 +22,13 @@
                 <p>{{ form.username }}</p>
                 <label>Senha:</label>
                 <p>{{ form.password }}</p>
-            <button class="btn-newuser" type="submit"> CADASTRAR </button>
+            <button onclick="confirmation()" class="btn-newuser" type="submit"> CADASTRAR </button>
         </form>
     </div>
 </div>
-
+<script>
+    function confirmation() {
+        alert("Usuário cadastrado com sucesso!");
+    }
+</script>
 {% endblock %}
