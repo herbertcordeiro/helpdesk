@@ -12,7 +12,11 @@
 <div class="container-listticket">
     <div class="content-listticket">
         <div class="content-date">
-            <h4>Criado em: {{ticket.data_criacao}}<h4>
+			<h4>
+				Criado em: {{ ticket.data_criacao|date:"d/m/Y H:i A"  }}
+				Atualizado: {{ticket.modified|date:"d/m/Y H:i A"  }}
+				Validade: {{ticket.data_entrega|date:"d/m/Y H:i A"  }}
+			</h4>
         </div>
         <div class="ticket-details">
             <div class="details-list">
