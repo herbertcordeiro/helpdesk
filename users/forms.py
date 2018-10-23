@@ -10,6 +10,7 @@ class UserForm(forms.ModelForm):
             'email', 
             'password',
             'last_name',
-            'first_name'
+            'first_name',
+            'is_superuser'
         ]
         

@@ -29,3 +29,14 @@ def delete_users(request, user_id):
     user = User.objects.get(pk=user_id)
     user.delete()
     return HttpResponseRedirect('/users/')
+@permission_required('polls.can_vote', login_url='inicial')
+def edit(request, id):
+    user = User.objects.get(pk=id)
+    if request.method == 'POST':
+        form = UserForm(request.POST, instance=user)
+        form.save()
+        return HttpResponseRedirect('/users/')
+    else:
+        form = UserForm(instance=user)
+    context_dict = {'form': form, 'id': id}
+    return render(request, 'edit.html', context=context_dict)
