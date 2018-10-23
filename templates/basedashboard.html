@@ -41,12 +41,15 @@
                             <p>RELATÓRIOS</p>
                         </div>
                     </a>
-                    <a href="{% url 'users' %}">
-                        <div class="option">
-                            <img class="icon" src="{% static 'images/icon03.png' %}"> 
-                            <p>USUÁRIOS</p>
-                        </div>
-                    </a>
+                    {% if user.is_superuser %}
+                        <a href="{% url 'users' %}">
+                            <div class="option">
+                                <img class="icon" src="{% static 'images/icon03.png' %}"> 
+                                <p>USUÁRIOS</p>
+                            </div>
+                        </a>
+                    {% endif %}
+                   
                     <a href="#">
                         <div class="option">
                             <img class="icon" src="{% static 'images/icon04.png' %}"> 
