@@ -1,42 +1,41 @@
 from django.shortcuts import render, HttpResponseRedirect, redirect
-from .forms import UserForm
+from .forms import RegistrationForm, EditForm
 from django.contrib.auth.models import User
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.decorators import permission_required
+from django.contrib.auth.decorators import login_required, permission_required
 from adminstrador.urls import inicial
 
 @permission_required('polls.can_vote', login_url='inicial')
-def newUser(request):
-    form = UserForm(request.POST, request.FILES, None)
-    if form.is_valid():
-        nome = form.cleaned_data['first_name']
-        sobrenome = form.cleaned_data['last_name']
-        email = form.cleaned_data['email']
-        username = form.cleaned_data['username']
-        senha = form.cleaned_data['password']
-        new_user = User.objects.create_user(first_name=nome, last_name=sobrenome,email=email,username=username,password=senha)
-        new_user.save()
-        return redirect ('users')
-    return render(request, 'newUser.html', {'form': form})
+def register(request):
+    form = RegistrationForm(request.POST, request.FILES, None)
+    if request.method =='POST':
+        if form.is_valid():
+            form.save()
+            return redirect('users')
+    else:
+        form = RegistrationForm()
+        args = {'form': form}   
+        return render(request, 'newUser.html', args)
 
 @permission_required('polls.can_vote', login_url='inicial')
-def users(request):
+def list_users(request):
     userList = User.objects.values()
     return render(request, 'users.html', {"userList": userList})
 
 @permission_required('polls.can_vote', login_url='inicial')
-def delete_users(request, user_id):
+def delete(request, user_id):
     user = User.objects.get(pk=user_id)
     user.delete()
     return HttpResponseRedirect('/users/')
+
 @permission_required('polls.can_vote', login_url='inicial')
-def edit(request, id):
-    user = User.objects.get(pk=id)
+def edit(request, user_id):
+    user = User.objects.get(pk=user_id)
     if request.method == 'POST':
-        form = UserForm(request.POST, instance=user)
-        form.save()
-        return HttpResponseRedirect('/users/')
+        form = EditForm(request.POST, instance=user)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/users/')
     else:
-        form = UserForm(instance=user)
-    context_dict = {'form': form, 'id': id}
-    return render(request, 'edit.html', context=context_dict)
+        form = EditForm(instance=user)
+        args = {'form': form}
+        return render(request, 'edit_profile.html', args)

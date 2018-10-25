@@ -12,8 +12,8 @@ from django.contrib.auth.views import password_reset, password_reset_done, passw
 
 urlpatterns = [
     path('', include(home_urls)),
-    path('adm/', include(adminstrador_urls)),
-    path('tickets/', include('ticket.urls')),
+    path('inicial/', include(adminstrador_urls)),
+    path('tickets', include('ticket.urls')),
     path('users/', include('users.urls')),
     path('admin/', admin.site.urls),
     path('login/', auth_views.login, name='login'),

@@ -20,17 +20,15 @@
                 <p>{{ form.email }}</p>
                 <label>Nome de usuário:</label>
                 <p>{{ form.username }}</p>
-                <label>Senha:</label>
-                <p>{{ form.password }}</p>
                 <p> Super User </p>
                 <p>{{ form.is_superuser }}</p>
-            <button onclick="confirmation()" class="btn-newuser" type="submit"> EDITAR </button>
+            <button onclick="confirmation()" class="btn-newuser" type="submit"> Editar </button>
         </form>
     </div>
 </div>
 <script>
     function confirmation() {
-        alert("Usuário editado com sucesso!");
+        alert("Usuário cadastrado com sucesso!");
     }
 </script>
 {% endblock %}

@@ -129,7 +129,7 @@ STATIC_URL = '/static/'
 
 LOGIN_URL = '/login/'
 
-LOGIN_REDIRECT_URL = '/adm/inicial/' #URL DE TELA DE ADM.
+LOGIN_REDIRECT_URL = '/inicial/' #URL DE TELA DE ADM.
 
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 1025
