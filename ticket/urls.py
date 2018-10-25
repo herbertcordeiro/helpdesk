@@ -1,10 +1,10 @@
 from django.urls import path
-from .views import newticket, mostrar_ticket
+from .views import register_ticket, view_ticket
 from django.views.generic.base import TemplateView
 
 urlpatterns = [
-    path('/register', newticket, name='newticket'),
+    path('/register', register_ticket, name='newticket'),
     path('/option', TemplateView.as_view(template_name='optionticket.html'), name="optionticket"),
     path('/search', TemplateView.as_view(template_name='searchticket.html'), name='searchticket'),
-    path('', mostrar_ticket, name='id'),
+    path('', view_ticket, name='id'),
 ]
