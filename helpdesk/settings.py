@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'adminstrador',
     'users',
     'relatorios',
+    'recoverypw',
 ]
 
 MIDDLEWARE = [
