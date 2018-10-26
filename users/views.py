@@ -25,7 +25,7 @@ def list_users(request):
 def delete(request, user_id):
     user = User.objects.get(pk=user_id)
     user.delete()
-    return HttpResponseRedirect('/users/')
+    return redirect('users')
 
 @permission_required('polls.can_vote', login_url='inicial')
 def edit(request, user_id):
@@ -34,7 +34,7 @@ def edit(request, user_id):
         form = EditForm(request.POST, instance=user)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/users/')
+            return redirect('users')
     else:
         form = EditForm(instance=user)
         args = {'form': form}

@@ -21,6 +21,7 @@ class RegistrationForm(UserCreationForm):
         user.last_name = self.cleaned_data['last_name']
         user.email = self.cleaned_data['email']
         user.username = self.cleaned_data['username']
+        user.is_superuser = self.cleaned_data['is_superuser']
         if commit:
             user.save()
 
