@@ -22,7 +22,8 @@
                             Usuário: {{ user.username }} 
                         </td>
                         <td class="list-font"> 
-                            Email: {{ user.email }} 
+                            Email: {{ user.email }}
+                            <p>phone: {{ user.userprofile.phone }}</p>
                         </td>
                         <td>
                             <a href="{% url 'edit' user.id %}">

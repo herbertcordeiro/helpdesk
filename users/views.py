@@ -18,7 +18,7 @@ def register(request):
 
 @permission_required('polls.can_vote', login_url='inicial')
 def list_users(request):
-    userList = User.objects.values()
+    userList = User.objects.all()
     return render(request, 'users.html', {"userList": userList})
 
 @permission_required('polls.can_vote', login_url='inicial')

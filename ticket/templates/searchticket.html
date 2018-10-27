@@ -39,6 +39,9 @@
                     <form action="{% url 'id' %}" method="GET">
                         <input id="your_name" type="text" name="id" value="{{ id }}">
                         <input  class="btn-searchticket" type="submit" value="visualizar ticket">
+                        <button class="btn-cancel" onclick = "history.go(-1)" >
+                            cancelar
+                        </button>
                     </form>
                 </div>
                 <div class = "error">
