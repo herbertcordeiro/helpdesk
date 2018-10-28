@@ -41,3 +41,17 @@ class EditForm(UserChangeForm):
             'password',
             'is_superuser'
         )
+
+class EditForm2(UserChangeForm):
+    
+    anexo = forms.ImageField(required=False)
+    class Meta:
+        model = User
+        fields = (
+            'username', 
+            'email', 
+            'last_name',
+            'first_name',
+            'password',
+            'anexo'
+        )

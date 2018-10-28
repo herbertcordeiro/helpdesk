@@ -122,6 +122,9 @@ USE_L10N = True
 
 USE_TZ = True
 
+MEDIA_URL = '/users/midia/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'users/midia')
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/

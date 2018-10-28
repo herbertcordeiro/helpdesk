@@ -25,6 +25,7 @@
             <div class="content-dash">
                 <div class="profile-admin">
                     <div class="photo-admin">
+                        <img src="{{user.userprofile.image.url}}" width="120px">
                     </div>
                     <h4>{{user.first_name}} {{user.last_name}}</h4>
                 </div>
@@ -50,7 +51,7 @@
                         </a>
                     {% endif %}
                    
-                    <a href="#">
+                    <a href="{% url 'edit_perfil' %}">
                         <div class="option">
                             <img class="icon" src="{% static 'images/icon04.png' %}"> 
                             <p>PERFIL</p>
