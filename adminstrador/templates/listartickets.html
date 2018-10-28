@@ -32,7 +32,7 @@
                     <a href="{% url 'details' ticket.id %}"> 
                         # {{ ticket.id }} - {{ ticket.nome_completo }} <br>
                     </a>
-                    Atribuido: ** 
+                    Atribuido:  {{ ticket.user }}
                 </td>
                 <td class="list-font"> 
                     Categoria: {{ ticket.categoria.nome }} 

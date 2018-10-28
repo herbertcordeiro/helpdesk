@@ -40,7 +40,7 @@ def edit(request, user_id):
         args = {'form': form}
         return render(request, 'edit_profile.html', args)
 
-@permission_required('polls.can_vote', login_url='inicial')
+@login_required
 def edit_perfil(request):
     if request.method == 'POST':
         form = EditForm2(request.POST, instance=request.user)
