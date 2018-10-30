@@ -25,7 +25,9 @@
             <div class="content-dash">
                 <div class="profile-admin">
                     <div class="photo-admin">
-                        <img src="{{user.userprofile.image.url}}" width="120px">
+                        {% if user.userprofile.image %}
+                            <img src="{{ user.userprofile.image.url }}" width="240">
+                        {% endif %}
                     </div>
                     <h4>{{user.first_name}} {{user.last_name}}</h4>
                 </div>
@@ -51,7 +53,7 @@
                         </a>
                     {% endif %}
                    
-                    <a href="{% url 'edit_perfil' %}">
+                    <a href="{% url 'edit' %}">
                         <div class="option">
                             <img class="icon" src="{% static 'images/icon04.png' %}"> 
                             <p>PERFIL</p>
