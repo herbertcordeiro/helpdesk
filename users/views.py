@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponseRedirect, redirect
-from .forms import RegistrationForm, edit_photo_form, EditProfileForm
+from .forms import RegistrationForm, edit_photo_form, EditProfileForm, UserFormEdit
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required, permission_required
 from adminstrador.urls import inicial
@@ -29,8 +29,22 @@ def delete(request, user_id):
     user.delete()
     return redirect('users')
 
+@permission_required('polls.can_vote', login_url='inicial')
+def edit(request, user_id):
+    user = User.objects.get(pk=user_id)
+    if request.method == 'POST':
+        form = UserFormEdit(request.POST, instance=user)
+        if form.is_valid():
+            form.save()
+            return redirect('users')
+    else:
+        form = UserFormEdit(instance=user)
+        args = {'form': form}
+        return render(request, 'edit_profile.html', args)
+
+
 @login_required
-def add_photo(request):
+def perfil(request):
         print(request.user)
         if request.method == 'POST':
                 form = edit_photo_form(request.POST, request.FILES)

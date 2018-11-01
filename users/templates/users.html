@@ -23,10 +23,9 @@
                         </td>
                         <td class="list-font"> 
                             Email: {{ user.email }}
-                            <p>phone: {{ user.userprofile.phone }}</p>
                         </td>
                         <td>
-                            <a href="#">
+                            <a href="{% url 'edit' user.id %}">
                                 <img class="icon-user" src="../static/images/icon-edit.png">
                             </a>
                             <a href="#">
