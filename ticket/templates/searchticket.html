@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{% static 'css/colors.css' %}">
     <link rel="stylesheet" href="{% static 'css/navticket.css' %}">
     <link rel="stylesheet" href="{% static 'css/searchticket.css' %}">
+    <link rel="stylesheet" href="{% static 'css/newticket.css' %}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -39,9 +40,10 @@
                     <form action="{% url 'id' %}" method="GET">
                         <input id="your_name" type="text" name="id" value="{{ id }}">
                         <input  class="btn-searchticket" type="submit" value="visualizar ticket">
-                        <button class="btn-cancel" onclick = "history.go(-1)" >
+                        <a class="btn-cancel"  href="{% url 'optionticket' %}" type="button" >
                             cancelar
-                        </button>
+                        </a>
+
                     </form>
                 </div>
                 <div class = "error">
