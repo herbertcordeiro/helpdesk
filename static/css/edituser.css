@@ -6,7 +6,7 @@
 .btns-edit {
     display: grid;
     justify-content: end;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 #btn-edit-pass,
@@ -21,4 +21,14 @@
 
 #btn-edit-pass {
     margin-top: 10px;
+}
+
+.form-pass input {
+    margin-top: 10px;
+}
+
+.form-pass ul {
+    font-size: 0.8em;
+    color: var(--red);
+    margin-left: 20px;
 }
