@@ -12,26 +12,24 @@
 <div class="container-listticket">
     <div class="content-listticket">
         <div class="content-date">
-			<h4>
+			<h5>
 				Criado em: {{ ticket.data_criacao|date:"d/m/Y H:i A"  }}
-				Atualizado: {{ticket.modified|date:"d/m/Y H:i A"  }}
-			</h4>
+				- Atualizado: {{ticket.modified|date:"d/m/Y H:i A"  }}
+			</h5>
         </div>
         <div class="ticket-details">
             <div class="details-list">
-					<p>ID: </p>
-					<p>Status do ticket: </p>
-					<p>User: </p>
-					<p>Data do termino: </p>
-					<p>Categoria: </p>
-					<p>Nome e Sobrenome: </p>
-					<p>Email: </p>
-					<p>Telefone: </p>
-					<p>Descrição: </p>
-					
+				<p>ID: </p>
+				<p>Status do ticket: </p>
+				<p>User: </p>
+				<p>Categoria: </p>
+				<p>Nome e Sobrenome: </p>
+				<p>Email: </p>
+				<p>Telefone: </p>
+				<p>Descrição: </p>
 			</div>
 			<div class="details-atribute">
-				<form action="" method="post">
+				<form id="myform" action="" method="post">
 					{% csrf_token %}
 					<p>{{ticket.id}}</p>
 					<p>{{form.status}}</p>
@@ -41,10 +39,12 @@
 					<p>{{ticket.email}}</p>
 					<p>{{ticket.telefone}}</p>
 					<p>{{ticket.descricao}}</p>
-					<input type="submit" value="Submit" />
 				</form>
             </div>
         </div>
+		<div class="action-ticket">
+			<input class="btn-statusticket-salvar" form="myform" type="submit" value="SALVAR"/>
+			<a class="btn-statusticket-cancelar" type="button" href="{% url 'inicial' %}"/>CANCELAR</a>
     </div>
 </div>
 
