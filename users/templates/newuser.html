@@ -12,9 +12,24 @@
     <div class="content-newuser">
         <form action="" method="post">
             {% csrf_token %}
-            {{ form.as_p }}
-            {{ form2.as_p }}
-            <button onclick="confirmation()" class="btn-newuser" type="submit"> CADASTRAR </button>
+                <label>Nome:</label>
+                <p>{{ form.first_name }}</p>
+                <label>Sobrenome:</label>
+                <p>{{ form.last_name }}</p>
+                <label>Email:</label>
+                <p>{{ form.email }}</p>
+                <label>Nome de usuário:</label>
+                <p>{{ form.username }}</p>
+                <label>Senha:</label>
+                <p>{{ form.password1 }}</p>
+                <label>Confirmação de senha:</label>
+                <p>{{ form.password2 }}</p>
+                <label > Administrador</label>
+                <div id="check"> {{ form.is_superuser }} </div>
+                <div class="btns-edit">
+                    <button onclick="confirmation()" class="btn-statusticket-salvar" type="submit"> Salvar </button>
+                    <a class="btn-statusticket-cancelar" type="button" href="{% url 'users' %}"/>CANCELAR</a>
+                </div>        
         </form>
     </div>
 </div>
