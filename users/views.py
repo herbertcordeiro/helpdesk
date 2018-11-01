@@ -2,6 +2,8 @@ from django.shortcuts import render, HttpResponseRedirect, redirect
 from .forms import RegistrationForm, edit_photo_form, EditProfileForm, UserFormEdit
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required, permission_required
+from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth import update_session_auth_hash
 from adminstrador.urls import inicial
 from .models import UserProfile
 
@@ -60,3 +62,18 @@ def perfil(request):
                 form = edit_photo_form()
                 form2 = EditProfileForm(instance=request.user)
                 return render(request, 'edit_perfil.html', {'form':form, 'form2':form2})
+
+
+def edit_password(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(data=request.POST, user=request.user)
+        if form.is_valid():
+            form.save()
+            update_session_auth_hash(request, form.user)
+            return redirect('perfil')
+        else:
+            return redirect('edit_password')
+    else:
+        form = PasswordChangeForm(user=request.user)
+        args = {'form': form}
+        return render(request, 'edit_password.html', args)

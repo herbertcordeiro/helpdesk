@@ -16,7 +16,9 @@
             {{form2.as_p}}
             <button onclick="confirmation()" class="btn-newuser" type="submit"> Editar </button>
         </form>
+        <a href="{% url 'editpassword' %}" class="btn-newuser"> Editar Senha </a>
     </div>
+
 </div>
 <script>
     function confirmation() {
