@@ -13,6 +13,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', auth_views.login, name='login'),
     path('', include('recoverypw.urls')),
+    path('ajustes',include('ajustes.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = handler404
