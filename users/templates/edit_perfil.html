@@ -5,33 +5,33 @@
 {% block main %}
 
 <div class="container-title-newuser">
-	<h3 class="title-user"> Perfil </h3>
+	<h3 class="title-user"> Editar Perfil </h3>
 </div>
 
 <div class="container-newuser">
     <div class="content-newuser">
         <form action="" method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            <label>Nome:</label>
-                <p>{{ form.first_name }}</p>
+                <label>Nome:</label>
+                <p>{{ form2.first_name }}</p>
                 <label>Sobrenome:</label>
-                <p>{{ form.last_name }}</p>
+                <p>{{ form2.last_name }}</p>
                 <label>Email:</label>
-                <p>{{ form.email }}</p>
-                <label>Nome de usuário:</label>
-                <p>{{ form.username }}</p>
-                <label > Administrador</label>
-            {{form.as_p}}
-            {{form2.as_p}}
-            <button onclick="confirmation()" class="btn-newuser" type="submit"> Editar </button>
+                <p>{{ form2.email }}</p>
+                <label>Foto:</label>
+                {{form.photo}}
+                <a id="btn-edit-pass" href="{% url 'editpassword' %}" class="btn-statusticket-salvar"> Editar Senha </a>
+                <div class="btns-edit">
+                    <button onclick="confirmation()" class="btn-statusticket-salvar" type="submit"> Salvar </button>
+                    <a class="btn-statusticket-cancelar" type="button" href="{% url 'users' %}"/>CANCELAR</a>
+                </div>
         </form>
-        <a href="{% url 'editpassword' %}" class="btn-newuser"> Editar Senha </a>
     </div>
 
 </div>
 <script>
     function confirmation() {
-        alert("Usuário cadastrado com sucesso!");
+        alert("Alterações salvas com sucesso!");
     }
 </script>
 {% endblock %}

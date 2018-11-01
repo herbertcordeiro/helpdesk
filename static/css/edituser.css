@@ -6,11 +6,19 @@
 .btns-edit {
     display: grid;
     justify-content: end;
+    margin-top: 10px;
 }
 
+#btn-edit-pass,
 .btns-edit a:link,
+#btn-edit-pass,
 .btns-edit a:hover,
+#btn-edit-pass,
 .btns-edit a:visited {
     color: var(--white);
     text-decoration: none;
+}
+
+#btn-edit-pass {
+    margin-top: 10px;
 }
