@@ -12,6 +12,15 @@
     <div class="content-newuser">
         <form action="" method="post" enctype="multipart/form-data">
             {% csrf_token %}
+            <label>Nome:</label>
+                <p>{{ form.first_name }}</p>
+                <label>Sobrenome:</label>
+                <p>{{ form.last_name }}</p>
+                <label>Email:</label>
+                <p>{{ form.email }}</p>
+                <label>Nome de usuário:</label>
+                <p>{{ form.username }}</p>
+                <label > Administrador</label>
             {{form.as_p}}
             {{form2.as_p}}
             <button onclick="confirmation()" class="btn-newuser" type="submit"> Editar </button>

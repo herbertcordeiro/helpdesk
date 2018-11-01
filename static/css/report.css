@@ -34,14 +34,11 @@
     padding-left: 30px;
 }
 
-.grafico-linha {
-    display: grid;
-    grid-area: linha;
-    width: 95%;
-}
-
 .grafico-pizza {
     display: grid;
     grid-area: pizza;
     width: 95%;
+}
+
+.details-report {
 }

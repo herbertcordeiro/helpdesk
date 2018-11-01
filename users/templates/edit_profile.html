@@ -20,16 +20,18 @@
                 <p>{{ form.email }}</p>
                 <label>Nome de usuário:</label>
                 <p>{{ form.username }}</p>
-                <p> Super User </p>
-                <p>{{ form.is_superuser }}</p>
-                sdasd
-            <button onclick="confirmation()" class="btn-newuser" type="submit"> Editar </button>
+                <label > Administrador</label>
+                <div id="check"> {{ form.is_superuser }} </div>
+                <div class="btns-edit">
+                    <button onclick="confirmation()" class="btn-statusticket-salvar" type="submit"> Salvar </button>
+                    <a class="btn-statusticket-cancelar" type="button" href="{% url 'users' %}"/>CANCELAR</a>
+                </div>
         </form>
     </div>
 </div>
 <script>
     function confirmation() {
-        alert("Usuário cadastrado com sucesso!");
+        alert("Usuário editado com sucesso!");
     }
 </script>
 {% endblock %}

@@ -1,0 +1,16 @@
+#check {
+    width: 20px;
+    padding-top: 10px;
+}
+
+.btns-edit {
+    display: grid;
+    justify-content: end;
+}
+
+.btns-edit a:link,
+.btns-edit a:hover,
+.btns-edit a:visited {
+    color: var(--white);
+    text-decoration: none;
+}

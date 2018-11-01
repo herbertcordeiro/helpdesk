@@ -26,14 +26,16 @@
 
 <div id="bodyy" class="container-report">
     <div class="content-report">
-        <div class="grafico-linha">
-            <canvas id="grafico_linha"></canvas>
+        <div class="details-report">
+            {{total}}
         </div>
         <div class="grafico-pizza">
             <canvas id="grafico_pizza"></canvas>
         </div>
     </div>
+
 </div>
+
 <script>
     var ctx = document.getElementById("grafico_pizza");
     var total = JSON.parse('{{ total|safe }}');
@@ -57,48 +59,6 @@
                 ],
                 borderWidth: 1
             }]
-        },
-    });
-    var ctz = document.getElementById("grafico_linha");
-    var productsChart = new Chart(ctz, {
-        type: 'bar',
-        data: {
-            labels: nomes,
-            datasets: [{
-                label: 'Novo',
-                data: [65, 59, 80, 81, 56, 55, 40],
-                fill: false,
-                backgroundColor: [
-                    'rgba(255, 0, 66, 1)',
-                ],
-                borderColor: [
-                    'rgba(255, 0, 66, 1)',
-                ],
-                lineTension: 0.3
-            }, {
-                label: 'Aberto',
-                data: [70, 40, 85, 80, 96, 51, 49],
-                fill: false,
-                backgroundColor: [
-                    'rgba(54, 162, 235, 1)',
-                ],
-                borderColor: [
-                    'rgba(54, 162, 235, 1)',
-                ],
-                lineTension: 0.3
-            }, {
-                label: 'Fechado',
-                data: [100, 110, 50, 90, 20, 70, 72],
-                fill: false,
-                backgroundColor: [
-                    'rgba(255, 204, 0, 1)',
-                ],
-                borderColor: [
-                    'rgba(255, 204, 0, 1)',
-                ],
-                lineTension: 0.3
-            }]
-
         },
     });
 </script>

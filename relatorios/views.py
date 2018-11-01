@@ -35,7 +35,7 @@ def relatorios(request):
         'nomes': json.dumps(nomes),
         'tick': json.dumps(tick),
     }
-    return render(request, 'relatorios.html', context)
+    return render(request, 'relatorios.html', context, {"total":total})
 
 
 def separar_tickets(request):
