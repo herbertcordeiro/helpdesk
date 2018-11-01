@@ -1,19 +1,23 @@
 {% extends 'basedashboard.html' %}
 
-{% block titulo  %} USUÁRIOS  {% endblock %}
+{% block titulo  %} AJUSTES  {% endblock %}
 
 {% block main %}
 
 <div class="container-title-newuser">
-	<h3 class="title-user"> Ajustes </h3>
+	<h3 class="title-user"> Cadastrar Categoria </h3>
 </div>
 
 <div class="container-newuser">
     <div class="content-newuser">
         <form action="" method="post">
             {% csrf_token %}
-            {{ form.as_p }}
-            <button onclick="confirmation()" class="btn-newuser" type="submit"> CADASTRAR </button>
+            <label>Nome da categoria:</label>
+            <p>{{ form.nome }}</p>
+            <div class="btns-edit">
+                <button onclick="confirmation()" class="btn-statusticket-salvar" type="submit"> Salvar </button>
+                <a class="btn-statusticket-cancelar" type="button" href="{% url 'inicial' %}"/>CANCELAR</a>
+            </div>        
         </form>
     </div>
 </div>
