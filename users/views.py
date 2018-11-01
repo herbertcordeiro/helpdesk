@@ -77,3 +77,8 @@ def edit_password(request):
         form = PasswordChangeForm(user=request.user)
         args = {'form': form}
         return render(request, 'edit_password.html', args)
+
+@login_required
+def listar_usuarios(request):
+    userList = User.objects.all()
+    return userList
