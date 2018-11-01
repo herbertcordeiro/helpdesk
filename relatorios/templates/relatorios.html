@@ -5,13 +5,26 @@
 {% block main %}
 
 <div class="container-title-report">
-	<h3 class="title-report"> Relátorios de Tickets </h3>
-    <a href="#" class="btn">
+        <script type="text/javascript">
+        function genPDF() {
+            html2canvas(document.getElementById("bodyy"), {
+                onrendered: function (canvas) {
+                    var img = canvas.toDataURL("image/png");
+                    var doc = new jsPDF();
+                    doc.addImage(img, 'JPGE', 20, 20);
+                    doc.save('test.pdf');
+
+                }
+            })
+        }
+    </script>
+    <h3 class="title-report"> Relátorios de Tickets </h3>
+    <a href="javascript:genPDF()" class="btn">
         <div class="btn-new"> GERAR PDF </div>
     </a>
 </div>
 
-<div class="container-report">
+<div id="bodyy" class="container-report">
     <div class="content-report">
         <div class="grafico-linha">
             <canvas id="grafico_linha"></canvas>
@@ -24,6 +37,7 @@
 <script>
     var ctx = document.getElementById("grafico_pizza");
     var total = JSON.parse('{{ total|safe }}');
+    var nomes = JSON.parse('{{ nomes|safe }}');
     var productsChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
@@ -47,12 +61,12 @@
     });
     var ctz = document.getElementById("grafico_linha");
     var productsChart = new Chart(ctz, {
-        type: 'line',
+        type: 'bar',
         data: {
-            labels: ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"],
+            labels: nomes,
             datasets: [{
                 label: 'Novo',
-                data: [65,59,80,81,56,55,40],
+                data: [65, 59, 80, 81, 56, 55, 40],
                 fill: false,
                 backgroundColor: [
                     'rgba(255, 0, 66, 1)',
@@ -61,9 +75,9 @@
                     'rgba(255, 0, 66, 1)',
                 ],
                 lineTension: 0.3
-            },{
+            }, {
                 label: 'Aberto',
-                data: [70,40,85,80,96,51,49],
+                data: [70, 40, 85, 80, 96, 51, 49],
                 fill: false,
                 backgroundColor: [
                     'rgba(54, 162, 235, 1)',
@@ -71,10 +85,10 @@
                 borderColor: [
                     'rgba(54, 162, 235, 1)',
                 ],
-                lineTension: 0.3 
-            },{
+                lineTension: 0.3
+            }, {
                 label: 'Fechado',
-                data: [100,110,50,90,20,70,72],
+                data: [100, 110, 50, 90, 20, 70, 72],
                 fill: false,
                 backgroundColor: [
                     'rgba(255, 204, 0, 1)',
@@ -84,7 +98,7 @@
                 ],
                 lineTension: 0.3
             }]
-            
+
         },
     });
 </script>
