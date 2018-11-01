@@ -1,0 +1,25 @@
+{% extends 'basedashboard.html' %}
+
+{% block titulo  %} USUÁRIOS  {% endblock %}
+
+{% block main %}
+
+<div class="container-title-newuser">
+	<h3 class="title-user"> Ajustes </h3>
+</div>
+
+<div class="container-newuser">
+    <div class="content-newuser">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button onclick="confirmation()" class="btn-newuser" type="submit"> CADASTRAR </button>
+        </form>
+    </div>
+</div>
+<script>
+    function confirmation() {
+        alert("Categoria cadastrada com sucesso!");
+    }
+</script>
+{% endblock %}
