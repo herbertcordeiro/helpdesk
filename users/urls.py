@@ -8,4 +8,5 @@ urlpatterns = [
     path('perfil/', perfil, name='perfil'),
     path('edit/<int:user_id>', edit, name='edit'),
     path('editpassword/', edit_password, name='editpassword'),
+    path('delete/<int:user_id>',delete,name='delete'),
 ]
